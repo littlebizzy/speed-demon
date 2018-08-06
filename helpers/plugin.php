@@ -1,7 +1,7 @@
 <?php
 
 // Subpackage namespace
-namespace LittleBizzy\CustomFunctions\Helpers;
+namespace LittleBizzy\SpeedDemon\Helpers;
 
 /**
  * Plugin class
