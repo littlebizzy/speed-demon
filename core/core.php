@@ -22,20 +22,10 @@ final class Core extends Helpers\Singleton {
 	protected function onConstruct() {
 
 		// Factory object
-		$this->factory = new Factory($this->plugin);
+		$this->plugin->factory = new Factory($this->plugin);
 
-		// Remove query strings
-		if ($this->module('RMQRST_FILE', 'REMOVE_QUERY_STRINGS'))
-			$this->factory->moduleRemoveQueryStrings();
-	}
-
-
-
-	/**
-	 * Check if the plugin already exists or is disabled via constant
-	 */
-	private function module($plugin, $disable) {
-		return !(defined($plugin) || (defined($disable) && constant($disable)));
+		// Attemp to run all modules
+		$this->plugin->factory->modules();
 	}
 
 
