@@ -76,7 +76,7 @@ class Filter {
 
 
 	/**
-	 * Check the wp-config.php constant REMOVE_QUERY_STRINGS_ARGS
+	 * Check the constant REMOVE_QUERY_STRINGS_ARGS
 	 * Example: define('REMOVE_QUERY_STRINGS_ARGS', 'ver,test,w');
 	 */
 	private function unwanted() {
