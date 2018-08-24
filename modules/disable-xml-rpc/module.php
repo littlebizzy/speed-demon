@@ -14,13 +14,6 @@ class Module {
 
 
 	/**
-	 * Module prefix
-	 */
-	const PREFIX = 'dsbxml';
-
-
-
-	/**
 	 * External object/key
 	 */
 	private $key;
