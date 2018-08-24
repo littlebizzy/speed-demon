@@ -20,9 +20,9 @@ final class Modules extends Helpers\Singleton {
 	 * Declare the plugin modules
 	 */
 	private $modules = [
-		'remove-query-strings' 			=> 'RMQRST_FILE',
-		/* 'disable-xml-rpc'			=> null,
-		'disable-embeds'				=> null,
+		'remove-query-strings' 			=> ['constants' => 'RMQRST_FILE'],
+		'disable-xml-rpc'				=> ['classes' => ['\LittleBizzy\DisableXMLRPC\LB_Disable_XML_RPC', '\LB_Disable_XML_RPC']],
+		/*'disable-embeds'				=> null,
 		'disable-emojis'				=> null,
 		'index-autoload'				=> null,
 		'delete-expired-transients'		=> null,
@@ -55,21 +55,57 @@ final class Modules extends Helpers\Singleton {
 	 */
 	public function enabled($key) {
 
-		// Original plugin constant
-		if (isset($this->modules[$key]) && defined($this->modules[$key]))
+		// Check module disabled mode
+		if (!isset($this->modules[$key]) || $this->invalidated($key)) {
 			return false;
+		}
 
-		// Prepare const
-		$const = explode('-', $key);
-		$const = array_map('strtoupper', $const);
-		$const = implode('_', $const);
+		// Check defined constants
+		if (!empty($this->modules[$key]['constants'])) {
 
-		// Check const
-		if (defined($const) && !constant($const))
-			return false;
+			// Cast to array
+			$constants = is_array($this->modules[$key]['constants'])? $this->modules[$key]['constants'] : [$this->modules[$key]['constants']];
+			foreach ($constants as $constant) {
+
+				// Check existence
+				if (defined($constant)) {
+					return false;
+				}
+			}
+		}
+
+		// Check existing classes
+		if (!empty($this->modules[$key]['classes'])) {
+
+			// Cast to array
+			$classes = is_array($this->modules[$key]['classes'])? $this->modules[$key]['classes'] : [$this->modules[$key]['classes']];
+			foreach ($classes as $class) {
+
+				//  Check existence
+				if (class_exists($class)) {
+					return false;
+				}
+			}
+		}
 
 		// Ok
 		return true;
+	}
+
+
+
+	/**
+	 * Specific module invalidation
+	 */
+	private function invalidated($key) {
+
+		// Prepare constant name
+		$name = explode('-', $key);
+		$name = array_map('strtoupper', $name);
+		$name = implode('_', $name);
+
+		// Invalidated on existence and false value
+		return defined($name) && !constant($name);
 	}
 
 
