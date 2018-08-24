@@ -1,7 +1,7 @@
 <?php
 
 // Subpackage namespace
-namespace LittleBizzy\SpeedDemon\Modules\Remove_Query_Strings;
+namespace LittleBizzy\SpeedDemon\Modules\Remove_Query_Strings\Core;
 
 /**
  * Filter class

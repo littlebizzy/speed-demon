@@ -31,7 +31,7 @@ class Module {
 		$this->modules = $modules;
 
 		// Initialization
-		add_action('init', [$this, 'init'], -999);
+		add_action('init', [$this, 'init'], PHP_INT_MAX);
 	}
 
 
@@ -46,7 +46,7 @@ class Module {
 			return;
 
 		// Start
-		new Disable;
+		new Core\XMLRPC;
 	}
 
 

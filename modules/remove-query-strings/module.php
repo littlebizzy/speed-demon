@@ -56,7 +56,7 @@ class Module {
 		// Local cache
 		static $filter;
 		if (!isset($filter))
-			$filter = new Filter(self::PREFIX);
+			$filter = new Core\Filter(self::PREFIX);
 
 		// Process filter
 		return $filter->run($src);

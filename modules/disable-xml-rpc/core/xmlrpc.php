@@ -1,15 +1,15 @@
 <?php
 
 // Subpackage namespace
-namespace LittleBizzy\SpeedDemon\Modules\Disable_Xml_Rpc;
+namespace LittleBizzy\SpeedDemon\Modules\Disable_Xml_Rpc\Core;
 
 /**
- * Disable class
+ * XMLRPC class
  *
  * @package Speed Demon
  * @subpackage Disable XML-RPC
  */
-class Disable {
+class XMLRPC {
 
 
 
