@@ -22,8 +22,8 @@ final class Modules extends Helpers\Singleton {
 	private $keys = [
 		'remove-query-strings' 			=> ['constants' => 'RMQRST_FILE'],
 		'disable-xml-rpc'				=> ['classes' => ['\LittleBizzy\DisableXMLRPC\LB_Disable_XML_RPC', '\LB_Disable_XML_RPC']],
-		/*'disable-embeds'				=> null,
-		'disable-emojis'				=> null,
+		'disable-embeds'				=> ['classes' => '\LittleBizzy\DisableEmbeds\Core\Core'],
+		/* 'disable-emojis'				=> null,
 		'index-autoload'				=> null,
 		'delete-expired-transients'		=> null,
 		'disable-post-via-email'		=> null, */
@@ -42,6 +42,9 @@ final class Modules extends Helpers\Singleton {
 			// Check module availability
 			if ($this->enabled($key)) {
 
+// Debug point
+//error_log($key);
+
 				// Create instance
 				$this->plugin->factory->module($key, $this);
 			}
@@ -56,7 +59,8 @@ final class Modules extends Helpers\Singleton {
 	public function enabled($key) {
 
 		// Check module disabled mode
-		if (!isset($this->keys[$key]) || $this->invalidated($key)) {
+		if (!isset($this->keys[$key]) ||
+			$this->invalidated($key)) {
 			return false;
 		}
 
