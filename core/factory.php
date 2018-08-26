@@ -39,7 +39,7 @@ class Factory extends Helpers\Factory {
 		$path = '\\LittleBizzy\\SpeedDemon\\Modules\\'.$class.'\\Module';
 
 		// Done
-		return new $path($key, $modules);
+		return new $path($key, $modules, $this->plugin->version);
 	}
 
 

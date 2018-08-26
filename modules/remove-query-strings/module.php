@@ -3,41 +3,32 @@
 // Subpackage namespace
 namespace LittleBizzy\SpeedDemon\Modules\Remove_Query_Strings;
 
+// Aliased namespaces
+use \LittleBizzy\SpeedDemon\Helpers;
+
 /**
  * Module class
  *
  * @package Speed Demon
  * @subpackage Remove Query Strings
  */
-class Module {
+class Module extends Helpers\Module {
 
 
 
 	/**
-	 * Module prefix
+	 * Module constants
 	 */
+	const FILE = __FILE__;
 	const PREFIX = 'rmqrst';
+	const NAMESPACE = __NAMESPACE__;
 
 
 
 	/**
-	 * External object/key
+	 * Add filters on module constructor
 	 */
-	private $key;
-	private $modules;
-
-
-
-	/**
-	 * Constructor
-	 */
-	public function __construct($key, $modules) {
-
-		// Properties
-		$this->key = $key;
-		$this->modules = $modules;
-
-		// Filters
+	public function onConstruct() {
 		add_filter('style_loader_src',  [$this, 'loader']);
 		add_filter('script_loader_src', [$this, 'loader']);
 	}
@@ -50,7 +41,7 @@ class Module {
 	public function loader($src) {
 
 		// Last minute check
-		if (!$this->modules->enabled($this->key))
+		if (!$this->enabled())
 			return $src;
 
 		// Local cache

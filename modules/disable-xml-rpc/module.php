@@ -9,28 +9,23 @@ namespace LittleBizzy\SpeedDemon\Modules\Disable_Xml_Rpc;
  * @package Speed Demon
  * @subpackage Disable XML-RPC
  */
-class Module {
+class Module extends Helpers\Module {
 
 
 
 	/**
-	 * External object/key
+	 * Module constants
 	 */
-	private $key;
-	private $modules;
+	const FILE = __FILE__;
+	const PREFIX = 'dsbxml';
+	const NAMESPACE = __NAMESPACE__;
 
 
 
 	/**
-	 * Constructor
+	 * WP init hook
 	 */
-	public function __construct($key, $modules) {
-
-		// Properties
-		$this->key = $key;
-		$this->modules = $modules;
-
-		// Initialization
+	public function onConstruct() {
 		add_action('init', [$this, 'init'], PHP_INT_MAX);
 	}
 
@@ -42,7 +37,7 @@ class Module {
 	public function init() {
 
 		// Last minute check
-		if (!$this->modules->enabled($this->key))
+		if (!$this->enabled())
 			return;
 
 		// Start
