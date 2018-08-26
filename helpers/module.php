@@ -16,15 +16,15 @@ class Module {
 	/**
 	 * External object/key
 	 */
-	private $key;
-	private $modules;
+	protected $key;
+	protected $modules;
 
 
 
 	/**
 	 * Current module namespace
 	 */
-	private $moduleNamespace;
+	protected $moduleNamespace;
 
 
 
@@ -38,7 +38,7 @@ class Module {
 		$this->modules = $modules;
 
 		// Current names
-		$this->packageNamespace = __NAMESPACE__;
+		$this->moduleNamespace = __NAMESPACE__;
 
 		// Module constructor
 		$this->onConstruct();
