@@ -3,6 +3,9 @@
 // Subpackage namespace
 namespace LittleBizzy\SpeedDemon\Modules\Disable_Xml_Rpc;
 
+// Aliased namespaces
+use \LittleBizzy\SpeedDemon\Helpers;
+
 /**
  * Module class
  *
@@ -23,7 +26,7 @@ class Module extends Helpers\Module {
 
 
 	/**
-	 * WP init hook
+	 * Wait to start on WP init hook
 	 */
 	public function onConstruct() {
 		add_action('init', [$this, 'init'], PHP_INT_MAX);
