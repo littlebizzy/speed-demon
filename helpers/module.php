@@ -57,7 +57,7 @@ class Module extends Plugin {
 	 * at any point of the WP config/plugins/theme execution.
 	 */
 	public function enabled() {
-		return $this->modules->enabled($this->key)
+		return $this->modules->enabled($this->key);
 	}
 
 
