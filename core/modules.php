@@ -17,9 +17,9 @@ final class Modules extends Helpers\Singleton {
 
 
 	/**
-	 * Declare the plugin modules
+	 * Modules keys and declarations
 	 */
-	private $modules = [
+	private $keys = [
 		'remove-query-strings' 			=> ['constants' => 'RMQRST_FILE'],
 		'disable-xml-rpc'				=> ['classes' => ['\LittleBizzy\DisableXMLRPC\LB_Disable_XML_RPC', '\LB_Disable_XML_RPC']],
 		/*'disable-embeds'				=> null,
@@ -37,7 +37,7 @@ final class Modules extends Helpers\Singleton {
 	protected function onConstruct() {
 
 		// Enum all modules
-		foreach ($this->modules as $key => $const) {
+		foreach ($this->keys as $key => $const) {
 
 			// Check module availability
 			if ($this->enabled($key)) {
@@ -56,15 +56,15 @@ final class Modules extends Helpers\Singleton {
 	public function enabled($key) {
 
 		// Check module disabled mode
-		if (!isset($this->modules[$key]) || $this->invalidated($key)) {
+		if (!isset($this->keys[$key]) || $this->invalidated($key)) {
 			return false;
 		}
 
 		// Check defined constants
-		if (!empty($this->modules[$key]['constants'])) {
+		if (!empty($this->keys[$key]['constants'])) {
 
 			// Cast to array
-			$constants = is_array($this->modules[$key]['constants'])? $this->modules[$key]['constants'] : [$this->modules[$key]['constants']];
+			$constants = is_array($this->keys[$key]['constants'])? $this->keys[$key]['constants'] : [$this->keys[$key]['constants']];
 			foreach ($constants as $constant) {
 
 				// Check existence
@@ -75,10 +75,10 @@ final class Modules extends Helpers\Singleton {
 		}
 
 		// Check existing classes
-		if (!empty($this->modules[$key]['classes'])) {
+		if (!empty($this->keys[$key]['classes'])) {
 
 			// Cast to array
-			$classes = is_array($this->modules[$key]['classes'])? $this->modules[$key]['classes'] : [$this->modules[$key]['classes']];
+			$classes = is_array($this->keys[$key]['classes'])? $this->keys[$key]['classes'] : [$this->keys[$key]['classes']];
 			foreach ($classes as $class) {
 
 				//  Check existence
