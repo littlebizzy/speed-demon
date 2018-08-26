@@ -35,8 +35,8 @@ class Factory extends Helpers\Factory {
 		$class = array_map('ucfirst', $class);
 		$class = implode('_', $class);
 
-		// Compose path and create a new instance
-		$path = '\\LittleBizzy\\SpeedDemon\\Modules\\'.$class.'\\Module';
+		// Compose path to create a new module instance
+		$path = $this->plugin->packageNamespace.'Modules\\'.$class.'\\Module';
 
 		// Done
 		return new $path($key, $modules, $this->plugin->version);
