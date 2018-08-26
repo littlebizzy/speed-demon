@@ -20,9 +20,20 @@ final class Modules extends Helpers\Singleton {
 	 * Modules keys and declarations
 	 */
 	private $keys = [
-		'remove-query-strings' 			=> ['constants' => 'RMQRST_FILE'],
-		'disable-xml-rpc'				=> ['classes' => ['\LittleBizzy\DisableXMLRPC\LB_Disable_XML_RPC', '\LB_Disable_XML_RPC']],
-		'disable-embeds'				=> ['classes' => '\LittleBizzy\DisableEmbeds\Core\Core'],
+
+		'remove-query-strings' => [
+			'constants' => 'RMQRST_FILE'
+		],
+
+		'disable-xml-rpc' => [
+			'classes' 	=> ['\LittleBizzy\DisableXMLRPC\LB_Disable_XML_RPC', '\LB_Disable_XML_RPC'],
+		],
+
+		'disable-embeds' => [
+			'constants' => '\LittleBizzy\DisableEmbeds\FILE',
+			'classes' 	=> '\LittleBizzy\DisableEmbeds\Core\Core',
+		],
+
 		/* 'disable-emojis'				=> null,
 		'index-autoload'				=> null,
 		'delete-expired-transients'		=> null,
