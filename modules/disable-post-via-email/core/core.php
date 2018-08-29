@@ -3,7 +3,6 @@
 // Subpackage namespace
 namespace LittleBizzy\SpeedDemon\Modules\Disable_Post_Via_Email\Core;
 
-
 /**
  * Core class
  *
