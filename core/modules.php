@@ -26,7 +26,7 @@ final class Modules extends Helpers\Singleton {
 		],
 
 		'disable-xml-rpc' => [
-			'classes' 	=> ['\LittleBizzy\DisableXMLRPC\LB_Disable_XML_RPC', '\LB_Disable_XML_RPC'],
+			'classes' 	=> ['\LB_Disable_XML_RPC', '\LittleBizzy\DisableXMLRPC\LB_Disable_XML_RPC'],
 		],
 
 		'disable-embeds' => [
@@ -34,8 +34,12 @@ final class Modules extends Helpers\Singleton {
 			'classes' 	=> '\LittleBizzy\DisableEmbeds\Core\Core',
 		],
 
-		/* 'disable-emojis'				=> null,
-		'index-autoload'				=> null,
+		'disable-emojis' => [
+			'constants' => '\LittleBizzy\DisableEmojis\FILE',
+			'classes' 	=> ['\LB_Disable_Emojis', '\LittleBizzy\DisableEmojis\Core\Core'],
+		],
+
+		/* 'index-autoload'				=> null,
 		'delete-expired-transients'		=> null,
 		'disable-post-via-email'		=> null, */
 	];
