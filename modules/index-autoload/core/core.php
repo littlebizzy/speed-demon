@@ -63,7 +63,7 @@ final class Core extends Helpers\Singleton {
 
 
 	/**
-	 * Creates the alter object
+	 * Calls the Alter object check method
 	 */
 	public function check() {
 		$this->plugin->factory->alter->check();
