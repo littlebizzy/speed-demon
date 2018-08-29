@@ -44,8 +44,12 @@ final class Modules extends Helpers\Singleton {
 			'classes'	=> '\IDXALD_Alter',
 		],
 
-		/*'delete-expired-transients'		=> null,
-		'disable-post-via-email'		=> null, */
+		'delete-expired-transients' => [
+			'constants' => '\LittleBizzy\DeleteExpiredTransients\FILE',
+			'classes'	=> '\LittleBizzy\DeleteExpiredTransients\Core\Core',
+		],
+
+		/* 'disable-post-via-email'		=> null, */
 	];
 
 
