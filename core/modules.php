@@ -49,7 +49,10 @@ final class Modules extends Helpers\Singleton {
 			'classes'	=> '\LittleBizzy\DeleteExpiredTransients\Core\Core',
 		],
 
-		/* 'disable-post-via-email'		=> null, */
+		'disable-post-via-email' => [
+			'constants' => '\LittleBizzy\DisablePostViaEmail\FILE',
+			'classes'	=> '\LittleBizzy\DisablePostViaEmail\Core\Core',
+		],
 	];
 
 
