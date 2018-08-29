@@ -53,6 +53,11 @@ final class Modules extends Helpers\Singleton {
 			'constants' => '\LittleBizzy\DisablePostViaEmail\FILE',
 			'classes'	=> '\LittleBizzy\DisablePostViaEmail\Core\Core',
 		],
+
+		'inline-styles' => [
+			'constants' => '\LittleBizzy\InlineStyles\FILE',
+			'classes'	=> '\LittleBizzy\InlineStyles\Core\Core',
+		],
 	];
 
 
