@@ -39,7 +39,7 @@ class Factory extends Helpers\Factory {
 		$path = $this->plugin->packageNamespace.'Modules\\'.$class.'\\Module';
 
 		// Done
-		return new $path($key, $modules, $this->plugin->version);
+		return new $path($key, $modules);
 	}
 
 

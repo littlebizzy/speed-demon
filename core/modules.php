@@ -39,8 +39,12 @@ final class Modules extends Helpers\Singleton {
 			'classes' 	=> ['\LB_Disable_Emojis', '\LittleBizzy\DisableEmojis\Core\Core'],
 		],
 
-		/* 'index-autoload'				=> null,
-		'delete-expired-transients'		=> null,
+		'index-autoload' => [
+			'constants' => 'IDXALD_FILE',
+			'classes'	=> '\IDXALD_Alter',
+		],
+
+		/*'delete-expired-transients'		=> null,
 		'disable-post-via-email'		=> null, */
 	];
 
@@ -125,6 +129,16 @@ final class Modules extends Helpers\Singleton {
 
 		// Invalidated on existence and false value
 		return defined($name) && !constant($name);
+	}
+
+
+
+	/**
+	 * Access to the plugin object using a public
+	 * method due the protected property declaration
+	 */
+	public function plugin() {
+		return $this->plugin;
 	}
 
 

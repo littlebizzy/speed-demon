@@ -45,10 +45,10 @@ class Factory extends Helpers\Factory {
 
 
 	/**
-	 * Registrar object
+	 * Registrar object (needs real plugin object)
 	 */
 	protected function createRegistrar() {
-		return new Helpers\Registrar($this->plugin);
+		return new Helpers\Registrar($this->plugin->plugin());
 	}
 
 

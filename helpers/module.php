@@ -25,7 +25,7 @@ class Module extends Plugin {
 	/**
 	 * Constructor
 	 */
-	public function __construct($key, $modules, $version) {
+	public function __construct($key, $modules) {
 
 		// Module properties
 		$this->key = $key;
@@ -35,7 +35,7 @@ class Module extends Plugin {
 		$this->file = static::FILE;
 		$this->root = dirname($this->file);
 		$this->prefix = static::PREFIX;
-		$this->version = $version;
+		$this->version = $modules->plugin()->version;
 		$this->packageNamespace = '\\'.static::NAMESPACE.'\\';
 
 		// Module constructor
@@ -58,6 +58,15 @@ class Module extends Plugin {
 	 */
 	public function enabled() {
 		return $this->modules->enabled($this->key);
+	}
+
+
+
+	/**
+	 * Access to the modules plugin object
+	 */
+	public function plugin() {
+		return $this->modules->plugin();
 	}
 
 
