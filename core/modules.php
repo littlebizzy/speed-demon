@@ -92,6 +92,11 @@ final class Modules extends Helpers\Singleton {
 		// Check module disabled mode
 		if (!isset($this->keys[$key]) ||
 			$this->invalidated($key)) {
+
+// Debug point
+//error_log('invalidated: '.$key);
+
+			// Invalidated
 			return false;
 		}
 
@@ -104,6 +109,11 @@ final class Modules extends Helpers\Singleton {
 
 				// Check existence
 				if (defined($constant)) {
+
+// Debug point
+//error_log('constant '.$constant.' - key: '.$key);
+
+					// Disabled
 					return false;
 				}
 			}
@@ -118,12 +128,17 @@ final class Modules extends Helpers\Singleton {
 
 				//  Check existence
 				if (class_exists($class)) {
+
+// Debug point
+//error_log('class '.$class.' - key: '.$key);
+
+					// Disabled
 					return false;
 				}
 			}
 		}
 
-		// Ok
+		// Enabled
 		return true;
 	}
 
