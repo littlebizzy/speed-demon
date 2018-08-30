@@ -10,7 +10,7 @@ use \LittleBizzy\SpeedDemon\Helpers;
  * Module class
  *
  * @package Speed Demon
- * @subpackage Disable Embeds
+ * @subpackage Disable Emojis
  */
 class Module extends Helpers\Module {
 
