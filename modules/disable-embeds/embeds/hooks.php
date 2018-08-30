@@ -39,7 +39,7 @@ class Hooks {
 		$this->plugin = $plugin;
 
 		// Init hook
-		add_action('init', [&$this, 'init'], PHP_INT_MAX);
+		add_action('init', [$this, 'init'], PHP_INT_MAX);
 	}
 
 
@@ -62,8 +62,8 @@ class Hooks {
 			$this->plugin->factory->cleaner->oembedCache();
 
 			// Process detected exceptions
-			add_filter('oembed_providers',  [&$this, 'providers']);
-			add_filter('pre_oembed_result', [&$this, 'preResults'], 10, 2);
+			add_filter('oembed_providers',  [$this, 'providers']);
+			add_filter('pre_oembed_result', [$this, 'preResults'], 10, 2);
 
 		// No exceptions
 		} else {

@@ -54,8 +54,8 @@ class Filters extends Emojis {
 		$this->remove('filters', $this->filters);
 
 		// Modifications
-		add_filter('tiny_mce_plugins',  [&$this, 'tinyMCEPlugins']);
-		add_filter('wp_resource_hints', [&$this, 'removeDNSPrefetch'], 10, 2);
+		add_filter('tiny_mce_plugins',  [$this, 'tinyMCEPlugins']);
+		add_filter('wp_resource_hints', [$this, 'removeDNSPrefetch'], 10, 2);
 	}
 
 
