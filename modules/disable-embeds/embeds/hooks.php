@@ -49,6 +49,11 @@ class Hooks {
 	 */
 	public function init() {
 
+		// Last minute check
+		if (!$this->plugin->enabled()) {
+			return;
+		}
+
 		// Actions and filters
 		$this->handle();
 
