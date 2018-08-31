@@ -24,14 +24,25 @@ final class Core extends Helpers\Singleton {
 		// Create module factory object
 		$this->plugin->factory = new Factory($this->plugin);
 
-		// Create registrar object and set hooks handler
-		$this->plugin->factory->registrar->setHandler($this);
+		// Module initialization
+		add_action('init', [$this, 'init']);
 
 		// Declare action to be fired from the cron hook
 		add_action('idxald_index_check', [$this, 'check']);
 
 		// Cron check
 		$this->cron();
+	}
+
+
+
+	/**
+	 * WP init hook
+	 */
+	public function init() {
+
+		// Create registrar object and set hooks handler
+		$this->plugin->factory->registrar->setHandler($this);
 	}
 
 
