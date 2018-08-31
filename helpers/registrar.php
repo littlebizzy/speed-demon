@@ -20,34 +20,10 @@ class Registrar {
 
 
 
-	// Properties
-	// ---------------------------------------------------------------------------------------------------
-
-
-
 	/**
 	 * Plugin object
 	 */
 	private $plugin;
-
-
-
-	/**
-	 * Handler object
-	 */
-	private $handler;
-
-
-
-	/**
-	 * Temp instance
-	 */
-	private static $instance;
-
-
-
-	// Initialization
-	// ---------------------------------------------------------------------------------------------------
 
 
 
@@ -65,36 +41,18 @@ class Registrar {
 	 */
 	public function setHandler($handler) {
 
-		// Set object
-		$this->handler = $handler;
-
 		// Check activation support
-		if (method_exists($this->handler, 'onActivation'))
-			register_activation_hook($this->plugin->file, array($this->handler, 'onActivation'));
+		if (method_exists($handler, 'onActivation'))
+			register_activation_hook($this->plugin->file, [$handler, 'onActivation']);
 
 		// Check deactivation support
-		if (method_exists($this->handler, 'onDeactivation'))
-			register_deactivation_hook($this->plugin->file, array($this->handler, 'onDeactivation'));
+		if (method_exists($handler, 'onDeactivation'))
+			register_deactivation_hook($this->plugin->file, [$handler, 'onDeactivation']);
 
-		// Check uninstall support, points to a local static method
-		if (method_exists($this->handler, 'onUninstall')) {
-			self::$instance = $this;
-			register_uninstall_hook($this->plugin->file, array('\\'.__CLASS__, 'onUninstall'));
+		// Check uninstall support
+		if (method_exists($handler, 'onUninstall')) {
+			register_uninstall_hook($this->plugin->file, ['\\'.get_class($handler), 'onUninstall']);
 		}
-	}
-
-
-
-	// WP Hooks
-	// ---------------------------------------------------------------------------------------------------
-
-
-
-	/**
-	 * Plugin uninstall wrapper
-	 */
-	public static function onUninstall() {
-		self::$instance->handler->onUninstall();
 	}
 
 

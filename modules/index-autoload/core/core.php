@@ -20,29 +20,34 @@ final class Core extends Helpers\Singleton {
 	 * Pseudo-constructor
 	 */
 	protected function onConstruct() {
-
-		// Create module factory object
-		$this->plugin->factory = new Factory($this->plugin);
-
-		// Module initialization
-		add_action('init', [$this, 'init']);
-
-		// Declare action to be fired from the cron hook
-		add_action('idxald_index_check', [$this, 'check']);
-
-		// Cron check
+		$this->init();
+		$this->hooks();
 		$this->cron();
 	}
 
 
 
 	/**
-	 * WP init hook
+	 * Initialization
 	 */
-	public function init() {
+	private function init() {
+
+		// Create module factory object
+		$this->plugin->factory = new Factory($this->plugin);
 
 		// Create registrar object and set hooks handler
 		$this->plugin->factory->registrar->setHandler($this);
+	}
+
+
+
+	/**
+	 * Hookable actions
+	 */
+	private function hooks() {
+
+		// Declare action to be fired from the cron hook
+		add_action('idxald_index_check', [$this, 'check']);
 	}
 
 
@@ -95,10 +100,10 @@ final class Core extends Helpers\Singleton {
 	 * Removes the index on uninstall and also
 	 * deletes the timestamp option record
 	 */
-	public function onUninstall() {
+	public static function onUninstall() {
 
 		// Remove the index
-		$this->plugin->factory->alter->remove();
+		Alter::instance()->remove();
 
 		// Removes option and cron hook
 		delete_option('idxald_timestamp');
