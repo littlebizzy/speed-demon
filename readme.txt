@@ -44,7 +44,47 @@ Below are all included sub-plugins along with their default values:
 * define('INDEX_AUTOLOAD', 'true');
 * define('DELETE_EXPIRED_TRANSIENTS', 'true');
 * define('DISABLE_POST_VIA_EMAIL', 'true');
-* define('INLINE_STYLES', 'false');
+* define('INLINE_STYLES', 'true');
+
+===
+
+Developer notes 1.0.0
+
+- The constant that controls the plugin (the one with the same plugin/module name) when it does not exists or has the value `true`is when it allows the module execution, and with a `false`value it prevents the execution
+
+- Each module checks some constant(s) and class(es) from the original plugin release, and if some are detected then aborts the module execution.
+
+- These checks of existing constants and classes are performed as late as possible, in order to give time to execute these constants/classes from different locations: wp-config.php, other plugins, functions.php from theme, etc.
+
+- Some modules code have changes from the original due the common module/plugin adaptation mechanisms, but I tried to keep the original code fragments.
+
+Regarding the modules:
+
+- Remove Query Strings
+The cancellation check works right on the style and loader filters.
+
+- Disable XML-RPC
+The last minute check occurs after the WP init hook. I have reorganized the plugin structure to fit the common module mechanism.
+
+- Disable Embeds
+Checks constants/classes at the beginning and after the init hook. Tested the correct execution on activation/deactivation hooks.
+
+- Disable Emojis
+Checks constants/classes at first and also after the init hook.
+
+- Index Autoload
+Checks constants/classes after the init hook. Tested the index removal and internal option deleted (used to save the timestamp) on plugin uninstall.
+
+- Delete Expired Transients
+Checking on start and under cron event execution.
+
+- Disable Post Via Email
+Just checks on start, it is not possible to check the module later due the early execution in wp-mail.php
+
+- Inline Styles
+Checks on start, and on the `wp_loaded` hook.
+
+===
 
 #### Compatibility ####
 
@@ -56,7 +96,21 @@ Note: Any WordPress plugin may also be loaded as "Must-Use" by using the [Autolo
 
 The following defined constants are supported by this plugin:
 
-* `define('DISABLE_NAG_NOTICES', true);`
+* define('DISABLE_NAG_NOTICES', true);
+* define('REMOVE_QUERY_STRINGS', 'true');
+* define('REMOVE_QUERY_STRINGS_ARGS', 'v,ver,version');
+* define('DISABLE_EMBEDS', 'true');
+* define('DISABLE_EMBEDS_ALLOWED_SOURCES', 'twitter, youtube');
+* define('DISABLE_EMOJIS', 'true');
+* define('DISABLE_XML_RPC', 'true');
+* define('INDEX_AUTOLOAD', 'true');
+* define('INDEX_AUTOLOAD_REGENERATE', true);
+* define('DELETE_EXPIRED_TRANSIENTS', 'true');
+* define('DELETE_EXPIRED_TRANSIENTS_HOURS', '6');
+* define('DELETE_EXPIRED_TRANSIENTS_MAX_EXECUTION_TIME', '10');
+* define('DELETE_EXPIRED_TRANSIENTS_MAX_BATCH_RECORDS', '50');
+* define('DISABLE_POST_VIA_EMAIL', 'true');
+* define('INLINE_STYLES', 'true');
 
 #### Plugin Features ####
 
@@ -203,3 +257,18 @@ Please avoid leaving negative reviews in order to get a feature implemented. Joi
 * bundles Delete Expired Transients 1.0.3
 * bundles Disable Post Via Email 1.0.0
 * bundles Inline Styles 1.1.0
+* define('DISABLE_NAG_NOTICES', true);
+* define('REMOVE_QUERY_STRINGS', 'true');
+* define('REMOVE_QUERY_STRINGS_ARGS', 'v,ver,version');
+* define('DISABLE_EMBEDS', 'true');
+* define('DISABLE_EMBEDS_ALLOWED_SOURCES', 'twitter, youtube');
+* define('DISABLE_EMOJIS', 'true');
+* define('DISABLE_XML_RPC', 'true');
+* define('INDEX_AUTOLOAD', 'true');
+* define('INDEX_AUTOLOAD_REGENERATE', true);
+* define('DELETE_EXPIRED_TRANSIENTS', 'true');
+* define('DELETE_EXPIRED_TRANSIENTS_HOURS', '6');
+* define('DELETE_EXPIRED_TRANSIENTS_MAX_EXECUTION_TIME', '10');
+* define('DELETE_EXPIRED_TRANSIENTS_MAX_BATCH_RECORDS', '50');
+* define('DISABLE_POST_VIA_EMAIL', 'true');
+* define('INLINE_STYLES', 'true');
