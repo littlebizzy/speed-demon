@@ -26,9 +26,6 @@ final class Core extends Helpers\Singleton {
 
 		// WP loaded hook
 		add_action('wp_loaded', [$this, 'loaded'], PHP_INT_MAX);
-
-		// Print styles hook
-		add_action('wp_print_styles', [$this, 'styles'], PHP_INT_MAX);
 	}
 
 
@@ -37,7 +34,17 @@ final class Core extends Helpers\Singleton {
 	 * Output parser object
 	 */
 	public function loaded() {
+
+		// Last minute check
+		if (!$this->plugin->enabled()) {
+			return;
+		}
+
+		// Start parsing the whole HTML
 		$this->plugin->factory->parser->start();
+
+		// Print styles hook
+		add_action('wp_print_styles', [$this, 'styles'], PHP_INT_MAX);
 	}
 
 
