@@ -13,6 +13,18 @@ class Emojis {
 
 
 
+	// Properties
+	// ---------------------------------------------------------------------------------------------------
+
+
+
+	/**
+	 * Plugin/module object
+	 */
+	protected $plugin;
+
+
+
 	// Initialization
 	// ---------------------------------------------------------------------------------------------------
 
@@ -21,7 +33,8 @@ class Emojis {
 	/**
 	 * Constructor
 	 */
-	public function __construct() {
+	public function __construct($plugin) {
+		$this->plugin = $plugin;
 		add_action('init', [$this, 'init']);
 	}
 

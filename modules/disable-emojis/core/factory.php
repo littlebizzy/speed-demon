@@ -21,7 +21,7 @@ class Factory extends Helpers\Factory {
 	 * Actions object
 	 */
 	protected function createActions() {
-		return new Emojis\Actions;
+		return new Emojis\Actions($this->plugin);
 	}
 
 
@@ -29,7 +29,7 @@ class Factory extends Helpers\Factory {
 	 * Filters object
 	 */
 	protected function createFilters() {
-		return new Emojis\Filters;
+		return new Emojis\Filters($this->plugin);
 	}
 
 

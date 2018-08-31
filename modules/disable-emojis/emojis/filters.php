@@ -50,6 +50,11 @@ class Filters extends Emojis {
 	 */
 	public function init() {
 
+		// Last minute check
+		if (!$this->plugin->enabled()) {
+			return;
+		}
+
 		// Remove filters
 		$this->remove('filters', $this->filters);
 

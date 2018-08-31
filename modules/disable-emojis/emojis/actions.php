@@ -44,6 +44,13 @@ class Actions extends Emojis {
 	 * Handle the WP init hook
 	 */
 	public function init() {
+
+		// Last minute check
+		if (!$this->plugin->enabled()) {
+			return;
+		}
+
+		// Remove actions
 		$this->remove('actions', $this->actions);
 	}
 
