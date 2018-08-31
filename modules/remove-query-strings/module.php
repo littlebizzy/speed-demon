@@ -21,7 +21,7 @@ class Module extends Helpers\Module {
 	 */
 	const FILE = __FILE__;
 	const PREFIX = 'rmqrst';
-	const NAMESPACE = __NAMESPACE__;
+	const MODULE_NAMESPACE = __NAMESPACE__;
 
 
 

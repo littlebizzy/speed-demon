@@ -36,7 +36,7 @@ class Module extends Plugin {
 		$this->root = dirname($this->file);
 		$this->prefix = static::PREFIX;
 		$this->version = $modules->plugin()->version;
-		$this->packageNamespace = '\\'.static::NAMESPACE.'\\';
+		$this->packageNamespace = '\\'.static::MODULE_NAMESPACE.'\\';
 
 		// Module constructor
 		$this->onConstruct();
