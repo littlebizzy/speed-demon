@@ -52,11 +52,18 @@ Developer notes 1.0.0
 
 - The constant that controls the plugin (the one with the same plugin/module name) when it does not exists or has the value `true`is when it allows the module execution, and with a `false`value it prevents the execution
 
-- Each module checks some constant(s) and class(es) from the original plugin release, and if some are detected then aborts the module execution.
+- Each module checks some constant(s) and class(es) from the original plugin release, and if some are detected then aborts the module execution. this is the sequence when a module ask if can continue the execution:
+
+- First check the existence of the corresponding module constants (REMOVE_QUERY_STRINGS, DISABLE_XML_RPC) and stops the module execution if defined with a false value.
+- Next step looks for a inherent constant of the original plugin to check if is running (RMQRST_FILE for Remove Query Strings, \LittleBizzy\DisableEmojis\FILE for Disable Emojis, etc.), aborting if detect the previous plugin.
+- Sometimes the original plugin does not have a constant (code from other developers), so just in case checks the plugin class existence (\LB_Disable_XML_RPC etc.)
+- But these checks do not do anything with the original plugin optional constants: REMOVE_QUERY_STRINGS_ARGS, DELETE_EXPIRED_TRANSIENTS_HOURS, etc.)
 
 - These checks of existing constants and classes are performed as late as possible, in order to give time to execute these constants/classes from different locations: wp-config.php, other plugins, functions.php from theme, etc.
 
-- Some modules code have changes from the original due the common module/plugin adaptation mechanisms, but I tried to keep the original code fragments.
+===
+
+- Some modules code have changes from the original due the common module/plugin adaptation mechanisms, but I tried to keep the original code fragments (Always will need small changes: namespaces, a separated main module folder, calls to check if the module is enabled, unified activation/deactivacion/uninstall hooks, etc.)
 
 Regarding the modules:
 
