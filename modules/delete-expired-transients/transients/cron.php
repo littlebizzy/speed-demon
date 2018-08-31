@@ -117,6 +117,11 @@ class Cron {
 	 */
 	public function onSchedule() {
 
+		// Last minute check
+		if (!$this->plugin->enabled()) {
+			return;
+		}
+
 		// Check external object cache
 		if (wp_using_ext_object_cache())
 			return;
