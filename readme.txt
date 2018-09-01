@@ -7,7 +7,7 @@ Requires at least: 4.4
 Tested up to: 4.9
 Requires PHP: 7.2
 Multisite support: No
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Prefix: SPDDMN
@@ -250,6 +250,14 @@ There is no settings page. To enable/disable a certain function (sub-plugin) use
 Please avoid leaving negative reviews in order to get a feature implemented. Join our Facebook group instead.
 
 == Changelog ==
+
+= 1.1.0 =
+* bundles Disable Admin-AJAX 1.0.0
+* bundles Disable Cart Fragments 1.1.3
+* bundles Disable jQuery Migrate 1.0.0
+* define('DISABLE_ADMIN_AJAX', 'true');
+* define('DISABLE_CART_FRAGMENTS', 'true');
+* define('DISABLE_JQUERY_MIGRATE', 'true');
 
 = 1.0.0 =
 * initial release
