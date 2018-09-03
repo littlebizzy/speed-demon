@@ -31,6 +31,21 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 
 #### The Long Version ####
 
+Bundles all of the following: 
+
+* [Delete Expired Transients](https://wordpress.org/plugins/delete-expired-transients-littlebizzy/)
+* [Disable Admin-AJAX](https://wordpress.org/plugins/disable-admin-ajax-littlebizzy/)
+* [Disable Cart Fragments](https://wordpress.org/plugins/disable-cart-fragments-littlebizzy/)
+* [Disable Embeds](https://wordpress.org/plugins/disable-embeds-littlebizzy/)
+* [Disable Emojis](https://wordpress.org/plugins/disable-emojis-littlebizzy/)
+* [Disable jQuery Migrate](https://wordpress.org/plugins/disable-jq-migrate-littlebizzy/)
+* [Disable Post Via Email](https://wordpress.org/plugins/disable-post-via-email-littlebizzy/)
+* [Disable XML-RPC](https://wordpress.org/plugins/disable-xml-rpc-littlebizzy/)
+* [Header Cleanup](https://wordpress.org/plugins/header-cleanup-littlebizzy/)
+* [Index Autoload](https://wordpress.org/plugins/index-autoload-littlebizzy/)
+* [Inline Styles](https://wordpress.org/plugins/inline-styles-littlebizzy/)
+* [Remove Query Strings](https://wordpress.org/plugins/remove-query-strings-littlebizzy/)
+
 1.0.0 = BETA VERSION (we will be adding more features gradually). The purpose of this plugin is to bundle several of our popular performance plugins into one single plugin for easier installation and management. In order to do this efficiently, however, Speed Demon maintains our popular "no settings page" approach to avoid database queries and instability/setup requirements. The most stable functions (sub-plugins) are enabled by default, while less predictable functions (sub-plugins) such as Inline Styles are disabled by default. In order to enable or disable any given function (sub-plugin) simply use the defined constants below inside your wp-config.php file or using our free Custom Functions plugin instead.
 
 Note: these defined constants are ONLY supported within Speed Demon. If you have one of these installed as a standalone plugin already, that function WILL REMAIN ENABLED until you disable the standalone version of the function. For example, if you disable Index Autoload in Speed Demon using a defined constant, but you still have our other Index Autoload plugin installed + enabled, then that function will continue to function until you disable or delete the standalone Index Autoload plugin. This allows for web hosts or other agencies to force-control their WordPress environment using our standalone plugins.
@@ -245,6 +260,22 @@ We released this plugin in response to our managed hosting clients asking for be
 
 There is no settings page. To enable/disable a certain function (sub-plugin) use the defined constants only.
 
+= Why don't you have a settings page? =
+
+Because that would mean database queries and more time/hassle/confusion for setup. No settings page means web developers, agencies, or web hosts can automate their WordPress setups (such as with Bash scripts, etc) much faster and easier, and clients have less chance of accidentally messing things up by snooping around a settings page.
+
+= Does it work alongside XYZ plugin? =
+
+Yes, it will work no matter what plugins/theme you have installed, there should be no conflicts.
+
+= My site looks horrible after installing this? =
+
+Turn off Inline Styles using the defined constant `define('INLINE_STYLES', 'false');` and consider ditching whatever bloated and horribly coded plugin is causing the problem, such as janky "slider" plugins, etc.
+
+= Why don't you support defer, async, or concantenation of JS/CSS files? =
+
+No serious website uses these methods. Don't believe us? Check the Alexa Top 100 sites and look at their source code. You will never see any high traffic or serious website using these methods because they are so risky. "But PageSpeed Insights told me to! I'm scared of Google!" ... do what you wish, we know from experience it will not help your rankings (or speed, in the vast majority of cases... and no, "scores" are not the same as "speed"). Rather than altering or manipulating the loading order (or loading location) of JS/CSS it makes much more sense to only install plugins or themes from quality authors, who should be trusted to load JS/CSS resources how and where they want. The only method we currently support is inlining all CSS stylesheets, which should work fine on 90% of WordPress sites (bloated/unstable plugins like sliders may have an issue). Likewise, many JS scripts inherently support defer/async, such as Google's Universal Analytics snippet. We don't believe in "hacky" solutions, but rather in trusting code sources to handle these things (in other words, choose your software wisely). Lastly, if you really want to concatenate all your JS into one crap-pile, it would be better to let you CDN provider do this for you (such as CloudFlare's free RocketLoader feature) rather than bundling your JS into some nasty temp file on your origin server.
+
 = I have a suggestion, how can I let you know? =
 
 Please avoid leaving negative reviews in order to get a feature implemented. Join our Facebook group instead.
@@ -255,35 +286,36 @@ Please avoid leaving negative reviews in order to get a feature implemented. Joi
 * bundles Disable Admin-AJAX 1.0.0
 * bundles Disable Cart Fragments 1.1.3
 * bundles Disable jQuery Migrate 1.0.0
+* bundles Header Cleanup 1.1.1
 * define('DISABLE_ADMIN_AJAX', 'true');
 * define('DISABLE_CART_FRAGMENTS', 'true');
 * define('DISABLE_JQUERY_MIGRATE', 'true');
+* define('HEADER_CLEANUP', 'true');
 
 = 1.0.0 =
 * initial release
 * tested with PHP 7.0
 * tested with PHP 7.1
 * tested with PHP 7.2
-* bundles Remove Query Strings 1.3.1
+* bundles Delete Expired Transients 1.0.3
 * bundles Disable Embeds 1.1.1
 * bundles Disable Emojis 1.1.2
+* bundles Disable Post Via Email 1.0.0
 * bundles Disable XML-RPC 1.0.8
 * bundles Index Autoload 1.1.1
-* bundles Delete Expired Transients 1.0.3
-* bundles Disable Post Via Email 1.0.0
 * bundles Inline Styles 1.1.0
-* define('DISABLE_NAG_NOTICES', true);
-* define('REMOVE_QUERY_STRINGS', 'true');
-* define('REMOVE_QUERY_STRINGS_ARGS', 'v,ver,version');
-* define('DISABLE_EMBEDS', 'true');
-* define('DISABLE_EMBEDS_ALLOWED_SOURCES', 'twitter, youtube');
-* define('DISABLE_EMOJIS', 'true');
-* define('DISABLE_XML_RPC', 'true');
-* define('INDEX_AUTOLOAD', 'true');
-* define('INDEX_AUTOLOAD_REGENERATE', true);
+* bundles Remove Query Strings 1.3.1
 * define('DELETE_EXPIRED_TRANSIENTS', 'true');
 * define('DELETE_EXPIRED_TRANSIENTS_HOURS', '6');
 * define('DELETE_EXPIRED_TRANSIENTS_MAX_EXECUTION_TIME', '10');
 * define('DELETE_EXPIRED_TRANSIENTS_MAX_BATCH_RECORDS', '50');
+* define('DISABLE_EMBEDS', 'true');
+* define('DISABLE_EMBEDS_ALLOWED_SOURCES', 'twitter, youtube');
+* define('DISABLE_EMOJIS', 'true');
 * define('DISABLE_POST_VIA_EMAIL', 'true');
+* define('DISABLE_XML_RPC', 'true');
+* define('INDEX_AUTOLOAD', 'true');
+* define('INDEX_AUTOLOAD_REGENERATE', true);
 * define('INLINE_STYLES', 'true');
+* define('REMOVE_QUERY_STRINGS', 'true');
+* define('REMOVE_QUERY_STRINGS_ARGS', 'v,ver,version');
