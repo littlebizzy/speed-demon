@@ -1,4 +1,4 @@
-=== Speed Demon ===
+=== Speed Demon (Performance Optimization Plugin) ===
 
 Contributors: littlebizzy
 Donate link: https://www.patreon.com/littlebizzy
