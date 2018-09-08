@@ -28,7 +28,7 @@ class Module extends Helpers\Module {
 	/**
 	 * Run the core module
 	 */
-	public function onConstruct() {
+	protected function onConstruct() {
 
 		// Check module
 		if (!$this->enabled()) {

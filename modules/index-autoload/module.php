@@ -28,7 +28,7 @@ class Module extends Helpers\Module {
 	/**
 	 * Wait to start on WP init hook
 	 */
-	public function onConstruct() {
+	protected function onConstruct() {
 		add_action('init', [$this, 'init'], PHP_INT_MAX);
 	}
 

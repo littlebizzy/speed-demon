@@ -28,7 +28,7 @@ class Module extends Helpers\Module {
 	/**
 	 * Add filters on module constructor
 	 */
-	public function onConstruct() {
+	protected function onConstruct() {
 		add_filter('style_loader_src',  [$this, 'loader']);
 		add_filter('script_loader_src', [$this, 'loader']);
 	}

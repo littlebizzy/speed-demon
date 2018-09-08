@@ -28,7 +28,7 @@ class Module extends Helpers\Module {
 	/**
 	 * Wait to start on WP init hook
 	 */
-	public function onConstruct() {
+	protected function onConstruct() {
 		add_action('init', [$this, 'init'], PHP_INT_MAX);
 	}
 
@@ -40,8 +40,9 @@ class Module extends Helpers\Module {
 	public function init() {
 
 		// Last minute check
-		if (!$this->enabled())
+		if (!$this->enabled()) {
 			return;
+		}
 
 		// Start
 		new Core\XMLRPC;
