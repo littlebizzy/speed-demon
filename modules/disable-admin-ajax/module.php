@@ -20,7 +20,7 @@ class Module extends Helpers\Module {
 	 * Module constants
 	 */
 	const FILE = __FILE__;
-	const PREFIX = 'dlextr';
+	const PREFIX = 'dsadax';
 	const MODULE_NAMESPACE = __NAMESPACE__;
 
 
