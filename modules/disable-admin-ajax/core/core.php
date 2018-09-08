@@ -3,23 +3,42 @@
 // Subpackage namespace
 namespace LittleBizzy\SpeedDemon\Modules\Disable_Admin_Ajax\Core;
 
-// Aliased namespaces
-use \LittleBizzy\SpeedDemon\Helpers;
-
 /**
  * Core class
  *
  * @package Speed Demon / Disable Admin-AJAX
  * @subpackage Core
  */
-final class Core extends Helpers\Singleton {
+final class Core {
 
 
 
 	/**
-	 * Pseudo constructor
+	 * Single class instance
 	 */
-	protected function onConstruct() {
+	private static $instance;
+
+
+
+	/**
+	 * Create or retrieve instance
+	 */
+	public static function instance() {
+
+		// Check instance
+		if (!isset(self::$instance))
+			self::$instance = new self;
+
+		// Done
+		return self::$instance;
+	}
+
+
+
+	/**
+	 * Constructor
+	 */
+	private function __construct() {
 
 		// Decompose referer
 		$parts = @parse_url($_SERVER['HTTP_REFERER']);
