@@ -58,6 +58,11 @@ final class Modules extends Helpers\Singleton {
 			'constants' => '\LittleBizzy\InlineStyles\FILE',
 			'classes'	=> '\LittleBizzy\InlineStyles\Core\Core',
 		],
+
+		'disable-admin-ajax' => [
+			'constants' => '\LittleBizzy\DisableAdminAJAX\FILE',
+			'classes'	=> '\LittleBizzy\DisableAdminAJAX\DisableAJAXCheck',
+		],
 	];
 
 
