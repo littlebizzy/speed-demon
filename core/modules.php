@@ -63,6 +63,11 @@ final class Modules extends Helpers\Singleton {
 			'constants' => '\LittleBizzy\DisableAdminAJAX\FILE',
 			'classes'	=> '\LittleBizzy\DisableAdminAJAX\DisableAJAXCheck',
 		],
+
+		'disable-cart-fragments' => [
+			'constants' => '\LittleBizzy\DisableCartFragments\FILE',
+			'classes'	=> '\LittleBizzy\DisableCartFragments\Core\Core',
+		],
 	];
 
 
