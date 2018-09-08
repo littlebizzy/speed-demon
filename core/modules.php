@@ -68,6 +68,11 @@ final class Modules extends Helpers\Singleton {
 			'constants' => '\LittleBizzy\DisableCartFragments\FILE',
 			'classes'	=> '\LittleBizzy\DisableCartFragments\Core\Core',
 		],
+
+		'disable-jquery-migrate' => [
+			'constants' => '\LittleBizzy\DisableJQueryMigrate\FILE',
+			'classes'	=> '\LittleBizzy\DisableJQueryMigrate\Core\Core',
+		],
 	];
 
 
