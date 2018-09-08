@@ -73,6 +73,11 @@ final class Modules extends Helpers\Singleton {
 			'constants' => '\LittleBizzy\DisableJQueryMigrate\FILE',
 			'classes'	=> '\LittleBizzy\DisableJQueryMigrate\Core\Core',
 		],
+
+		'header-cleanup' => [
+			'constants' => '\LittleBizzy\HeaderCleanup\FILE',
+			'classes'	=> '\LittleBizzy\HeaderCleanup\Core\Core',
+		],
 	];
 
 
