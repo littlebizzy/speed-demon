@@ -31,7 +31,7 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 
 #### The Long Version ####
 
-Bundles all of the following: 
+Bundles all of the following in one-click activation:
 
 * [Delete Expired Transients](https://wordpress.org/plugins/delete-expired-transients-littlebizzy/)
 * [Disable Admin-AJAX](https://wordpress.org/plugins/disable-admin-ajax-littlebizzy/)
@@ -45,6 +45,9 @@ Bundles all of the following:
 * [Index Autoload](https://wordpress.org/plugins/index-autoload-littlebizzy/)
 * [Inline Styles](https://wordpress.org/plugins/inline-styles-littlebizzy/)
 * [Remove Query Strings](https://wordpress.org/plugins/remove-query-strings-littlebizzy/)
+* (more modules coming soon...)
+
+...if you wish to disable a certain module, see notes below (must add a line of code tou your wp-config file to disable a certain module). This helps avoid pointless (slow and unnecessary) settings pages and database queries.
 
 1.0.0 = BETA VERSION (we will be adding more features gradually). The purpose of this plugin is to bundle several of our popular performance plugins into one single plugin for easier installation and management. In order to do this efficiently, however, Speed Demon maintains our popular "no settings page" approach to avoid database queries and instability/setup requirements. The most stable functions (sub-plugins) are enabled by default, while less predictable functions (sub-plugins) such as Inline Styles are disabled by default. In order to enable or disable any given function (sub-plugin) simply use the defined constants below inside your wp-config.php file or using our free Custom Functions plugin instead.
 
@@ -107,6 +110,21 @@ Just checks on start, it is not possible to check the module later due the early
 Checks on start, and on the `wp_loaded` hook.
 
 ===
+
+Developer notes 1.1.0 (still beta)
+
+- Disable Admin-AJAX
+The associated constant must be defined at the wp-config.php level because this module does not use any wp hook and runs at the same time of the plugin execution.
+
+- Disable Cart Fragments
+There is a conflict with previous constant DISABLE_CART_FRAGMENTS, which if exists is expected to be an array from the old plugin. The new module supports the different data types (boolean or array), but if the constant remains boolean and the old plugin is activated, then the `true`value is interpreted as page 1 (due the type casting).
+The last check looking if the module is enabled works just before to remove the enqueued carts fragments scripts, so this module constant can be located anywhere.
+
+- Disable jQuery Migrate
+Module is checked on the wp_default_scripts WP core hook, so the module constant can be defined in any place.
+
+- Header Cleanup
+Plugin functionality is checked at WP init hook, so the module constant can be defined anywhere.
 
 #### Compatibility ####
 
@@ -291,6 +309,8 @@ Please avoid leaving negative reviews in order to get a feature implemented. Joi
 * define('DISABLE_CART_FRAGMENTS', 'true');
 * define('DISABLE_JQUERY_MIGRATE', 'true');
 * define('HEADER_CLEANUP', 'true');
+* added recommended plugins notice
+* added rating request notice
 
 = 1.0.0 =
 * initial release
@@ -319,3 +339,6 @@ Please avoid leaving negative reviews in order to get a feature implemented. Joi
 * define('INLINE_STYLES', 'true');
 * define('REMOVE_QUERY_STRINGS', 'true');
 * define('REMOVE_QUERY_STRINGS_ARGS', 'v,ver,version');
+* added warning to Multisite installations
+* plugin uses PHP namespaces
+* object-oriented codebase
