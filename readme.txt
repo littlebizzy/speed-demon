@@ -7,7 +7,7 @@ Requires at least: 4.4
 Tested up to: 4.9
 Requires PHP: 7.2
 Multisite support: No
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Prefix: SPDDMN
@@ -22,12 +22,7 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 * [**Worth a 5-star review? Thank you!**](https://wordpress.org/support/plugin/speed-demon-littlebizzy/reviews/?rate=5#new-post)
 * [Plugin Homepage](https://www.littlebizzy.com/plugins/speed-demon)
 * [Plugin GitHub](https://github.com/littlebizzy/speed-demon)
-
-*Our related OSS projects:*
-
 * [SlickStack (LEMP stack automation)](https://slickstack.io)
-* [WP Lite boilerplate](https://wplite.org)
-* [Starter Theme](https://starter.littlebizzy.com)
 
 #### The Long Version ####
 
@@ -44,6 +39,7 @@ Bundles all of the following in one-click activation:
 * [Header Cleanup](https://wordpress.org/plugins/header-cleanup-littlebizzy/)
 * [Index Autoload](https://wordpress.org/plugins/index-autoload-littlebizzy/)
 * [Inline Styles](https://wordpress.org/plugins/inline-styles-littlebizzy/)
+* [Minify HTML](https://wordpress.org/plugins/minify-html-littlebizzy/)
 * [Remove Query Strings](https://wordpress.org/plugins/remove-query-strings-littlebizzy/)
 * (more modules coming soon...)
 
@@ -52,17 +48,6 @@ Bundles all of the following in one-click activation:
 1.0.0 = BETA VERSION (we will be adding more features gradually). The purpose of this plugin is to bundle several of our popular performance plugins into one single plugin for easier installation and management. In order to do this efficiently, however, Speed Demon maintains our popular "no settings page" approach to avoid database queries and instability/setup requirements. The most stable functions (sub-plugins) are enabled by default, while less predictable functions (sub-plugins) such as Inline Styles are disabled by default. In order to enable or disable any given function (sub-plugin) simply use the defined constants below inside your wp-config.php file or using our free Custom Functions plugin instead.
 
 Note: these defined constants are ONLY supported within Speed Demon. If you have one of these installed as a standalone plugin already, that function WILL REMAIN ENABLED until you disable the standalone version of the function. For example, if you disable Index Autoload in Speed Demon using a defined constant, but you still have our other Index Autoload plugin installed + enabled, then that function will continue to function until you disable or delete the standalone Index Autoload plugin. This allows for web hosts or other agencies to force-control their WordPress environment using our standalone plugins.
-
-Below are all included sub-plugins along with their default values:
-
-* define('REMOVE_QUERY_STRINGS', 'true');
-* define('DISABLE_EMBEDS', 'true');
-* define('DISABLE_EMOJIS', 'true');
-* define('DISABLE_XML_RPC', 'true');
-* define('INDEX_AUTOLOAD', 'true');
-* define('DELETE_EXPIRED_TRANSIENTS', 'true');
-* define('DISABLE_POST_VIA_EMAIL', 'true');
-* define('INLINE_STYLES', 'true');
 
 ===
 
@@ -134,23 +119,29 @@ Note: Any WordPress plugin may also be loaded as "Must-Use" by using the [Autolo
 
 #### Defined Constants ####
 
-The following defined constants are supported by this plugin:
-
+*Plugin Meta*
 * define('DISABLE_NAG_NOTICES', true);
-* define('REMOVE_QUERY_STRINGS', 'true');
-* define('REMOVE_QUERY_STRINGS_ARGS', 'v,ver,version');
-* define('DISABLE_EMBEDS', 'true');
-* define('DISABLE_EMBEDS_ALLOWED_SOURCES', 'twitter, youtube');
-* define('DISABLE_EMOJIS', 'true');
-* define('DISABLE_XML_RPC', 'true');
-* define('INDEX_AUTOLOAD', 'true');
-* define('INDEX_AUTOLOAD_REGENERATE', true);
-* define('DELETE_EXPIRED_TRANSIENTS', 'true');
+
+*Plugin Functions*
+* define('DELETE_EXPIRED_TRANSIENTS', true);
 * define('DELETE_EXPIRED_TRANSIENTS_HOURS', '6');
 * define('DELETE_EXPIRED_TRANSIENTS_MAX_EXECUTION_TIME', '10');
 * define('DELETE_EXPIRED_TRANSIENTS_MAX_BATCH_RECORDS', '50');
-* define('DISABLE_POST_VIA_EMAIL', 'true');
-* define('INLINE_STYLES', 'true');
+* define('DISABLE_ADMIN_AJAX', true);
+* define('DISABLE_CART_FRAGMENTS', true);
+* define('DISABLE_EMBEDS', true);
+* define('DISABLE_EMBEDS_ALLOWED_SOURCES', 'twitter, youtube');
+* define('DISABLE_EMOJIS', true);
+* define('DISABLE_JQUERY_MIGRATE', true);
+* define('DISABLE_POST_VIA_EMAIL', true);
+* define('DISABLE_XML_RPC', true);
+* define('HEADER_CLEANUP', true);
+* define('INDEX_AUTOLOAD', true);
+* define('INDEX_AUTOLOAD_REGENERATE', true);
+* define('INLINE_STYLES', true);
+* define('MINIFY_HTML', true);
+* define('REMOVE_QUERY_STRINGS', true);
+* define('REMOVE_QUERY_STRINGS_ARGS', 'v,ver,version');
 
 #### Plugin Features ####
 
@@ -199,6 +190,7 @@ Note: This defined constant will only affect the notices mentioned above, and wi
 * [Disable Empty Trash](https://wordpress.org/plugins/disable-empty-trash-littlebizzy/)
 * [Disable Image Compression](https://wordpress.org/plugins/disable-image-compression-littlebizzy/)
 * [Disable jQuery Migrate](https://wordpress.org/plugins/disable-jq-migrate-littlebizzy/)
+* [Disable Post Via Email](https://wordpress.org/plugins/disable-post-via-email-littlebizzy/)
 * [Disable Search](https://wordpress.org/plugins/disable-search-littlebizzy/)
 * [Disable WooCommerce Status](https://wordpress.org/plugins/disable-wc-status-littlebizzy/)
 * [Disable WooCommerce Styles](https://wordpress.org/plugins/disable-wc-styles-littlebizzy/)
@@ -208,18 +200,25 @@ Note: This defined constant will only affect the notices mentioned above, and wi
 * [Download Theme](https://wordpress.org/plugins/download-theme-littlebizzy/)
 * [Duplicate Post](https://wordpress.org/plugins/duplicate-post-littlebizzy/)
 * [Enable Subtitles](https://wordpress.org/plugins/enable-subtitles-littlebizzy/)
-* [Export Database](https://wordpress.org/plugins/export-database-littlebizzy/)
+* [Export Database (Backup Database)](https://wordpress.org/plugins/export-database-littlebizzy/)
 * [Facebook Pixel](https://wordpress.org/plugins/fb-pixel-littlebizzy/)
-* [Force HTTPS](https://wordpress.org/plugins/force-https-littlebizzy/)
+* [Force HTTPS (Force SSL)](https://wordpress.org/plugins/force-https-littlebizzy/)
 * [Force Strong Hashing](https://wordpress.org/plugins/force-strong-hashing-littlebizzy/)
 * [Google Analytics](https://wordpress.org/plugins/ga-littlebizzy/)
 * [Header Cleanup](https://wordpress.org/plugins/header-cleanup-littlebizzy/)
 * [Index Autoload](https://wordpress.org/plugins/index-autoload-littlebizzy/)
+* [Inline Styles (Inline CSS)](https://wordpress.org/plugins/inline-styles-littlebizzy/)
 * [Maintenance Mode](https://wordpress.org/plugins/maintenance-mode-littlebizzy/)
+* [Minify HTML](https://wordpress.org/plugins/minify-html-littlebizzy/)
+* [Plugin Blacklist](https://github.com/littlebizzy/plugin-blacklist)
 * [Profile Change Alerts](https://wordpress.org/plugins/profile-change-alerts-littlebizzy/)
+* [Purge Them All (Purge All Caches)](https://wordpress.org/plugins/purge-them-all-littlebizzy/)
 * [Remove Category Base](https://wordpress.org/plugins/remove-category-base-littlebizzy/)
 * [Remove Query Strings](https://wordpress.org/plugins/remove-query-strings-littlebizzy/)
+* [Security Guard](https://wordpress.org/plugins/security-guard-littlebizzy/)
+* [SEO Genius](https://wordpress.org/plugins/seo-genius-littlebizzy/)
 * [Server Status](https://wordpress.org/plugins/server-status-littlebizzy/)
+* [Speed Demon (Performance Optimization)](https://wordpress.org/plugins/speed-demon-littlebizzy/)
 * [StatCounter](https://wordpress.org/plugins/sc-littlebizzy/)
 * [View Defined Constants](https://wordpress.org/plugins/view-defined-constants-littlebizzy/)
 * [Virtual Robots.txt](https://wordpress.org/plugins/virtual-robotstxt-littlebizzy/)
@@ -299,6 +298,12 @@ No serious website uses these methods. Don't believe us? Check the Alexa Top 100
 Please avoid leaving negative reviews in order to get a feature implemented. Join our Facebook group instead.
 
 == Changelog ==
+
+= 1.2.0 =
+* bundles Minify HTML 1.0.0
+* default status for Inline Styles is now = false
+* default status for Disable Admin-AJAX is now = false
+* default status for Disable jQuery Migrate is now = false
 
 = 1.1.0 =
 * bundles Disable Admin-AJAX 1.0.0
