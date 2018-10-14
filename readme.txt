@@ -122,24 +122,26 @@ Note: Any WordPress plugin may also be loaded as "Must-Use" by using the [Autolo
 *Plugin Meta*
 * define('DISABLE_NAG_NOTICES', true);
 
-*Plugin Functions*
+*Default Functions*
 * define('DELETE_EXPIRED_TRANSIENTS', true);
 * define('DELETE_EXPIRED_TRANSIENTS_HOURS', '6');
 * define('DELETE_EXPIRED_TRANSIENTS_MAX_EXECUTION_TIME', '10');
 * define('DELETE_EXPIRED_TRANSIENTS_MAX_BATCH_RECORDS', '50');
-* define('DISABLE_ADMIN_AJAX', true);
+* define('DISABLE_ADMIN_AJAX', false);
 * define('DISABLE_CART_FRAGMENTS', true);
 * define('DISABLE_EMBEDS', true);
-* define('DISABLE_EMBEDS_ALLOWED_SOURCES', 'twitter, youtube');
+* define('DISABLE_EMBEDS_ALLOWED_SOURCES', 'none');
 * define('DISABLE_EMOJIS', true);
-* define('DISABLE_JQUERY_MIGRATE', true);
+* define('DISABLE_JQUERY_MIGRATE', false);
 * define('DISABLE_POST_VIA_EMAIL', true);
 * define('DISABLE_XML_RPC', true);
 * define('HEADER_CLEANUP', true);
 * define('INDEX_AUTOLOAD', true);
-* define('INDEX_AUTOLOAD_REGENERATE', true);
-* define('INLINE_STYLES', true);
+* define('INDEX_AUTOLOAD_REGENERATE', false);
+* define('INLINE_STYLES', false);
 * define('MINIFY_HTML', true);
+* define('MINIFY_HTML_INLINE_SCRIPTS', false);
+* define('MINIFY_HTML_INLINE_STYLES', true);
 * define('REMOVE_QUERY_STRINGS', true);
 * define('REMOVE_QUERY_STRINGS_ARGS', 'v,ver,version');
 
