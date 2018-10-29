@@ -305,17 +305,16 @@ Please avoid leaving negative reviews in order to get a feature implemented. Joi
 * bundles Minify HTML 1.0.0
 * default status for Inline Styles is now = false
 * default status for Disable Admin-AJAX is now = false
-* default status for Disable jQuery Migrate is now = false
 
 = 1.1.0 =
 * bundles Disable Admin-AJAX 1.0.0
 * bundles Disable Cart Fragments 1.1.3
 * bundles Disable jQuery Migrate 1.0.0
 * bundles Header Cleanup 1.1.1
-* define('DISABLE_ADMIN_AJAX', 'true');
-* define('DISABLE_CART_FRAGMENTS', 'true');
-* define('DISABLE_JQUERY_MIGRATE', 'true');
-* define('HEADER_CLEANUP', 'true');
+* define('DISABLE_ADMIN_AJAX', true);
+* define('DISABLE_CART_FRAGMENTS', true);
+* define('DISABLE_JQUERY_MIGRATE', true);
+* define('HEADER_CLEANUP', true);
 * added recommended plugins notice
 * added rating request notice
 
@@ -332,19 +331,19 @@ Please avoid leaving negative reviews in order to get a feature implemented. Joi
 * bundles Index Autoload 1.1.1
 * bundles Inline Styles 1.1.0
 * bundles Remove Query Strings 1.3.1
-* define('DELETE_EXPIRED_TRANSIENTS', 'true');
+* define('DELETE_EXPIRED_TRANSIENTS', true);
 * define('DELETE_EXPIRED_TRANSIENTS_HOURS', '6');
 * define('DELETE_EXPIRED_TRANSIENTS_MAX_EXECUTION_TIME', '10');
 * define('DELETE_EXPIRED_TRANSIENTS_MAX_BATCH_RECORDS', '50');
-* define('DISABLE_EMBEDS', 'true');
+* define('DISABLE_EMBEDS', true);
 * define('DISABLE_EMBEDS_ALLOWED_SOURCES', 'twitter, youtube');
-* define('DISABLE_EMOJIS', 'true');
-* define('DISABLE_POST_VIA_EMAIL', 'true');
-* define('DISABLE_XML_RPC', 'true');
-* define('INDEX_AUTOLOAD', 'true');
+* define('DISABLE_EMOJIS', true);
+* define('DISABLE_POST_VIA_EMAIL', true);
+* define('DISABLE_XML_RPC', true);
+* define('INDEX_AUTOLOAD', true);
 * define('INDEX_AUTOLOAD_REGENERATE', true);
-* define('INLINE_STYLES', 'true');
-* define('REMOVE_QUERY_STRINGS', 'true');
+* define('INLINE_STYLES', true);
+* define('REMOVE_QUERY_STRINGS', true);
 * define('REMOVE_QUERY_STRINGS_ARGS', 'v,ver,version');
 * added warning to Multisite installations
 * plugin uses PHP namespaces
