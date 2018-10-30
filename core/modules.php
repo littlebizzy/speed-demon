@@ -55,11 +55,13 @@ final class Modules extends Helpers\Singleton {
 		],
 
 		'inline-styles' => [
+			'default'	=> false,
 			'constants' => '\LittleBizzy\InlineStyles\FILE',
 			'classes'	=> '\LittleBizzy\InlineStyles\Core\Core',
 		],
 
 		'disable-admin-ajax' => [
+			'default'	=> false,
 			'constants' => '\LittleBizzy\DisableAdminAJAX\FILE',
 			'classes'	=> '\LittleBizzy\DisableAdminAJAX\DisableAJAXCheck',
 		],
@@ -77,6 +79,11 @@ final class Modules extends Helpers\Singleton {
 		'header-cleanup' => [
 			'constants' => '\LittleBizzy\HeaderCleanup\FILE',
 			'classes'	=> '\LittleBizzy\HeaderCleanup\Core\Core',
+		],
+
+		'minify-html' => [
+			'constants' => '\LittleBizzy\MinifyHTML\FILE',
+			'classes'	=> '\LittleBizzy\MinifyHTML\Core\Core',
 		],
 	];
 
@@ -111,6 +118,7 @@ final class Modules extends Helpers\Singleton {
 
 		// Check module disabled mode
 		if (!isset($this->keys[$key]) ||
+			(isset($this->keys[$key]['default']) && false === $this->keys[$key]['default']) ||
 			$this->invalidated($key)) {
 
 // Debug point
