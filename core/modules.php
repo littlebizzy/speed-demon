@@ -118,7 +118,6 @@ final class Modules extends Helpers\Singleton {
 
 		// Check module disabled mode
 		if (!isset($this->keys[$key]) ||
-			(isset($this->keys[$key]['default']) && false === $this->keys[$key]['default']) ||
 			$this->invalidated($key)) {
 
 // Debug point
@@ -177,13 +176,25 @@ final class Modules extends Helpers\Singleton {
 	 */
 	private function invalidated($key) {
 
+		// Initialize
+		$invalidated = false;
+
 		// Prepare constant name
 		$name = explode('-', $key);
 		$name = array_map('strtoupper', $name);
 		$name = implode('_', $name);
 
-		// Invalidated on existence and false value
-		return defined($name) && !constant($name);
+		// Invalidated on constant existence and false value
+		if (defined($name)) {
+			$invalidated = !constant($name);
+
+		// Invalidated if default property is false
+		} elseif (isset($this->keys[$key]['default'])) {
+			$invalidated = !$this->keys[$key]['default'];
+		}
+
+		// Done
+		return $invalidated;
 	}
 
 
