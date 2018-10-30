@@ -102,7 +102,7 @@ class Filter {
 		}
 
 		// Set result
-		$unwanted = empty($args)? $this->default() : $args;
+		$unwanted = empty($args)? $this->defaultArgs() : $args;
 
 		// Done
 		return $unwanted;
@@ -113,7 +113,7 @@ class Filter {
 	/**
 	 * Default remove query string args
 	 */
-	private function default() {
+	private function defaultArgs() {
 		return ['ver', 'version', 'v'];
 	}
 
