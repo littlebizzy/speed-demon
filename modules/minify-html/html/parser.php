@@ -6,7 +6,7 @@ namespace LittleBizzy\SpeedDemon\Modules\Minify_Html\Html;
 /**
  * Parser class
  *
- * @package Minify HTML
+ * @package Speed Demon / Minify HTML
  * @subpackage HTML
  */
 class Parser {
