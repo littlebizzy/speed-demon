@@ -1,6 +1,6 @@
 # Speed Demon
 
-A powerful bundle of lightweight tools and settings that drastically improve the loading speed of WordPress by reducing bulk and improving efficiency.
+A powerful bundle of lightweight tweaks that drastically improve the loading speed of WordPress by reducing bloat and improving overall efficiency.
 
 * [Plugin homepage](https://www.littlebizzy.com/plugins/speed-demon)
 * [Download (WordPress.org)](https://wordpress.org/plugins/speed-demon-littlebizzy)
