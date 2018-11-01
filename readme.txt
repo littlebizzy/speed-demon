@@ -2,7 +2,7 @@
 
 Contributors: littlebizzy
 Donate link: https://www.patreon.com/littlebizzy
-Tags: speed, performance, tweaks, loading, time
+Tags: speed, pagespeed, performance, loading, time
 Requires at least: 4.4
 Tested up to: 4.9
 Requires PHP: 7.2
@@ -18,15 +18,17 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 
 A powerful bundle of lightweight tweaks that drastically improve the loading speed of WordPress by reducing bloat and improving overall efficiency.
 
-* [**Join our FREE Facebook group for support!**](https://www.facebook.com/groups/littlebizzy/)
+* [**Join our FREE Facebook group for support**](https://www.facebook.com/groups/littlebizzy/)
 * [**Worth a 5-star review? Thank you!**](https://wordpress.org/support/plugin/speed-demon-littlebizzy/reviews/?rate=5#new-post)
 * [Plugin Homepage](https://www.littlebizzy.com/plugins/speed-demon)
 * [Plugin GitHub](https://github.com/littlebizzy/speed-demon)
-* [SlickStack (LEMP stack automation)](https://slickstack.io)
+* [SlickStack](https://slickstack.io)
 
 #### The Long Version ####
 
-Bundles all of the following in one-click activation:
+Speed Demon is a lightweight PHP-only plugin that bundles several of our popular performance micro-plugins into a single plugin. All functions can be controlled precisely using defined constants.
+
+Current features:
 
 * [Delete Expired Transients](https://wordpress.org/plugins/delete-expired-transients-littlebizzy/)
 * [Disable Admin-AJAX](https://wordpress.org/plugins/disable-admin-ajax-littlebizzy/)
@@ -113,41 +115,50 @@ Plugin functionality is checked at WP init hook, so the module constant can be d
 
 #### Compatibility ####
 
-This plugin has been designed for use on LEMP (Nginx) web servers with PHP 7.0 and MySQL 5.7 to achieve best performance. All of our plugins are meant for single site WordPress installations only; for both performance and security reasons, we highly recommend against using WordPress Multisite for the vast majority of projects.
+This plugin has been designed for use on LEMP (Nginx) web servers with PHP 7.2 and MySQL 5.7 to achieve best performance. All of our plugins are meant for single site WordPress installations only; for both performance and usability reasons, we highly recommend avoiding WordPress Multisite for the vast majority of projects.
 
-Note: Any WordPress plugin may also be loaded as "Must-Use" by using the [Autoloader](https://github.com/littlebizzy/autoloader) script within the `mu-plugins` directory.
+Any of our WordPress plugins may also be loaded as "Must-Use" plugins by using our free [Autoloader](https://github.com/littlebizzy/autoloader) script in the `mu-plugins` directory.
 
 #### Defined Constants ####
 
-*Plugin Meta*
-* define('DISABLE_NAG_NOTICES', true);
+    /* Plugin Meta */
+    define('DISABLE_NAG_NOTICES', true);
 
-*Default Functions*
-* define('DELETE_EXPIRED_TRANSIENTS', true);
-* define('DELETE_EXPIRED_TRANSIENTS_HOURS', '6');
-* define('DELETE_EXPIRED_TRANSIENTS_MAX_EXECUTION_TIME', '10');
-* define('DELETE_EXPIRED_TRANSIENTS_MAX_BATCH_RECORDS', '50');
-* define('DISABLE_ADMIN_AJAX', false);
-* define('DISABLE_CART_FRAGMENTS', true);
-* define('DISABLE_EMBEDS', true);
-* define('DISABLE_EMBEDS_ALLOWED_SOURCES', 'none');
-* define('DISABLE_EMOJIS', true);
-* define('DISABLE_JQUERY_MIGRATE', false);
-* define('DISABLE_POST_VIA_EMAIL', true);
-* define('DISABLE_XML_RPC', true);
-* define('HEADER_CLEANUP', true);
-* define('INDEX_AUTOLOAD', true);
-* define('INDEX_AUTOLOAD_REGENERATE', false);
-* define('INLINE_STYLES', false);
-* define('MINIFY_HTML', true);
-* define('MINIFY_HTML_INLINE_SCRIPTS', false);
-* define('MINIFY_HTML_INLINE_STYLES', true);
-* define('REMOVE_QUERY_STRINGS', true);
-* define('REMOVE_QUERY_STRINGS_ARGS', 'v,ver,version');
+    /* Speed Demon Functions */
+    define('DELETE_EXPIRED_TRANSIENTS', true);
+    define('DELETE_EXPIRED_TRANSIENTS_HOURS', '6');
+    define('DELETE_EXPIRED_TRANSIENTS_MAX_EXECUTION_TIME', '10');
+    define('DELETE_EXPIRED_TRANSIENTS_MAX_BATCH_RECORDS', '50');
+    define('DISABLE_ADMIN_AJAX', false);
+    define('DISABLE_CART_FRAGMENTS', true);
+    define('DISABLE_EMBEDS', true);
+    define('DISABLE_EMBEDS_ALLOWED_SOURCES', 'none');
+    define('DISABLE_EMOJIS', true);
+    define('DISABLE_JQUERY_MIGRATE', false);
+    define('DISABLE_POST_VIA_EMAIL', true);
+    define('DISABLE_XML_RPC', true);
+    define('HEADER_CLEANUP', true);
+    define('INDEX_AUTOLOAD', true);
+    define('INDEX_AUTOLOAD_REGENERATE', false);
+    define('INLINE_STYLES', false);
+    define('MINIFY_HTML', true);
+    define('MINIFY_HTML_INLINE_STYLES', true);
+    define('MINIFY_HTML_INLINE_STYLES_COMMENTS', true);
+    define('MINIFY_HTML_REMOVE_COMMENTS', true);
+    define('MINIFY_HTML_REMOVE_CONDITIONALS', true);
+    define('MINIFY_HTML_REMOVE_EXTRA_SPACING', true);
+    define('MINIFY_HTML_REMOVE_HTML5_SELF_CLOSING', false);
+    define('MINIFY_HTML_REMOVE_LINE_BREAKS', true);
+    define('MINIFY_HTML_INLINE_SCRIPTS', false);
+    define('MINIFY_HTML_INLINE_SCRIPTS_COMMENTS', false);
+    define('MINIFY_HTML_UTF8_SUPPORT', true);
+    define('REMOVE_QUERY_STRINGS', true);
+    define('REMOVE_QUERY_STRINGS_ARGS', 'v,ver,version');
 
 #### Plugin Features ####
 
-* Premium Version: [**Speed Demon**](https://www.littlebizzy.com/plugins/speed-demon)
+* Parent Plugin: N/A
+* Disable Nag Notices: [Yes](https://codex.wordpress.org/Plugin_API/Action_Reference/admin_notices#Disable_Nag_Notices)
 * Settings Page: No
 * PHP Namespaces: Yes
 * Object-Oriented Code: Yes
@@ -155,123 +166,37 @@ Note: Any WordPress plugin may also be loaded as "Must-Use" by using the [Autolo
 * Includes CSS: No
 * Database Storage: Yes
   * Transients: No
-  * Options: Yes
-  * Table Data: Yes
+  * WP Options Table: Yes
+  * Other Tables: No
   * Creates New Tables: No
-* Database Queries: Backend Only 
-  * Query Types: Options API
+* Database Queries: Backend Only (Options API)
+* Must-Use Support: [Yes](https://github.com/littlebizzy/autoloader)
 * Multisite Support: No
 * Uninstalls Data: Yes
 
-#### Nag Notices ####
-
-This plugin generates multiple [Admin Notices](https://codex.wordpress.org/Plugin_API/Action_Reference/admin_notices) in the WP Admin dashboard. The first is a notice that fires during plugin activation which recommends several related free plugins that we believe will enhance this plugin's features; this notice will re-appear approximately once every 6 months as our code and recommendations evolve. The second is a notice that fires a few days after plugin activation which asks for a 5-star rating of this plugin on its WordPress.org profile page. This notice will re-appear approximately once every 9 months. These notices can be dismissed by clicking the **(x)** symbol in the upper right of the notice box. These notices may annoy or confuse certain users, but are appreciated by the majority of our userbase, who understand that these notices support our free contributions to the WordPress community while providing valuable (free) recommendations for optimizing their website.
-
-If you feel that these notices are too annoying, than we encourage you to consider one or more of our upcoming premium plugins that combine several free plugin features into a single control panel, or even consider developing your own plugins for WordPress, if supporting free plugin authors is too frustrating for you. A final alternative would be to place the defined constant mentioned below inside of your `wp-config.php` file to manually hide this plugin's nag notices:
-
-    define('DISABLE_NAG_NOTICES', true);
-
-Note: This defined constant will only affect the notices mentioned above, and will not affect any other notices generated by this plugin or other plugins, such as one-time notices that communicate with admin-level users.
-
-#### Inspiration ####
-
-* n/a
-
-#### Free Plugins ####
-
-* [404 To Homepage](https://wordpress.org/plugins/404-to-homepage-littlebizzy/)
-* [Autoloader](https://github.com/littlebizzy/autoloader)
-* [CloudFlare](https://wordpress.org/plugins/cf-littlebizzy/)
-* [Custom Functions](https://wordpress.org/plugins/custom-functions-littlebizzy/)
-* [Delete Expired Transients](https://wordpress.org/plugins/delete-expired-transients-littlebizzy/)
-* [Disable Admin-AJAX](https://wordpress.org/plugins/disable-admin-ajax-littlebizzy/)
-* [Disable Author Pages](https://wordpress.org/plugins/disable-author-pages-littlebizzy/)
-* [Disable Cart Fragments](https://wordpress.org/plugins/disable-cart-fragments-littlebizzy/)
-* [Disable Embeds](https://wordpress.org/plugins/disable-embeds-littlebizzy/)
-* [Disable Emojis](https://wordpress.org/plugins/disable-emojis-littlebizzy/)
-* [Disable Empty Trash](https://wordpress.org/plugins/disable-empty-trash-littlebizzy/)
-* [Disable Image Compression](https://wordpress.org/plugins/disable-image-compression-littlebizzy/)
-* [Disable jQuery Migrate](https://wordpress.org/plugins/disable-jq-migrate-littlebizzy/)
-* [Disable Post Via Email](https://wordpress.org/plugins/disable-post-via-email-littlebizzy/)
-* [Disable Search](https://wordpress.org/plugins/disable-search-littlebizzy/)
-* [Disable WooCommerce Status](https://wordpress.org/plugins/disable-wc-status-littlebizzy/)
-* [Disable WooCommerce Styles](https://wordpress.org/plugins/disable-wc-styles-littlebizzy/)
-* [Disable XML-RPC](https://wordpress.org/plugins/disable-xml-rpc-littlebizzy/)
-* [Download Media](https://wordpress.org/plugins/download-media-littlebizzy/)
-* [Download Plugin](https://wordpress.org/plugins/download-plugin-littlebizzy/)
-* [Download Theme](https://wordpress.org/plugins/download-theme-littlebizzy/)
-* [Duplicate Post](https://wordpress.org/plugins/duplicate-post-littlebizzy/)
-* [Enable Subtitles](https://wordpress.org/plugins/enable-subtitles-littlebizzy/)
-* [Export Database (Backup Database)](https://wordpress.org/plugins/export-database-littlebizzy/)
-* [Facebook Pixel](https://wordpress.org/plugins/fb-pixel-littlebizzy/)
-* [Force HTTPS (Force SSL)](https://wordpress.org/plugins/force-https-littlebizzy/)
-* [Force Strong Hashing](https://wordpress.org/plugins/force-strong-hashing-littlebizzy/)
-* [Google Analytics](https://wordpress.org/plugins/ga-littlebizzy/)
-* [Header Cleanup](https://wordpress.org/plugins/header-cleanup-littlebizzy/)
-* [Index Autoload](https://wordpress.org/plugins/index-autoload-littlebizzy/)
-* [Inline Styles (Inline CSS)](https://wordpress.org/plugins/inline-styles-littlebizzy/)
-* [Maintenance Mode](https://wordpress.org/plugins/maintenance-mode-littlebizzy/)
-* [Minify HTML](https://wordpress.org/plugins/minify-html-littlebizzy/)
-* [Plugin Blacklist](https://github.com/littlebizzy/plugin-blacklist)
-* [Profile Change Alerts](https://wordpress.org/plugins/profile-change-alerts-littlebizzy/)
-* [Purge Them All (Purge All Caches)](https://wordpress.org/plugins/purge-them-all-littlebizzy/)
-* [Remove Category Base](https://wordpress.org/plugins/remove-category-base-littlebizzy/)
-* [Remove Query Strings](https://wordpress.org/plugins/remove-query-strings-littlebizzy/)
-* [Security Guard](https://wordpress.org/plugins/security-guard-littlebizzy/)
-* [SEO Genius](https://wordpress.org/plugins/seo-genius-littlebizzy/)
-* [Server Status](https://wordpress.org/plugins/server-status-littlebizzy/)
-* [Speed Demon (Performance Optimization)](https://wordpress.org/plugins/speed-demon-littlebizzy/)
-* [StatCounter](https://wordpress.org/plugins/sc-littlebizzy/)
-* [View Defined Constants](https://wordpress.org/plugins/view-defined-constants-littlebizzy/)
-* [Virtual Robots.txt](https://wordpress.org/plugins/virtual-robotstxt-littlebizzy/)
-
-#### Premium Plugins ####
-
-* [**Members Only**](https://www.littlebizzy.com/members)
-* [Dunning Master](https://www.littlebizzy.com/plugins/dunning-master)
-* [Genghis Khan](https://www.littlebizzy.com/plugins/genghis-khan)
-* [Great Migration](https://www.littlebizzy.com/plugins/great-migration)
-* [Security Guard](https://www.littlebizzy.com/plugins/security-guard)
-* [SEO Genius](https://www.littlebizzy.com/plugins/seo-genius)
-* [Speed Demon](https://www.littlebizzy.com/plugins/speed-demon)
-
 #### Special Thanks ####
 
-* [Alex Georgiou](https://www.alexgeorgiou.gr)
-* [Automattic](https://automattic.com)
-* [Brad Touesnard](https://bradt.ca)
-* [Daniel Auener](http://www.danielauener.com)
-* [Delicious Brains](https://deliciousbrains.com)
-* [Greg Rickaby](https://gregrickaby.com)
-* [Matt Mullenweg](https://ma.tt)
-* [Mika Epstein](https://halfelf.org)
-* [Mike Garrett](https://mikengarrett.com)
-* [Samuel Wood](http://ottopress.com)
-* [Scott Reilly](http://coffee2code.com)
-* [Jan Dembowski](https://profiles.wordpress.org/jdembowski)
-* [Jeff Starr](https://perishablepress.com)
-* [Jeff Chandler](https://jeffc.me)
-* [Jeff Matson](https://jeffmatson.net)
-* [Jeremy Wagner](https://jeremywagner.me)
-* [John James Jacoby](https://jjj.blog)
-* [Leland Fiegel](https://leland.me)
-* [Paul Irish](https://www.paulirish.com)
-* [Rahul Bansal](https://profiles.wordpress.org/rahul286)
-* [Roots](https://roots.io)
-* [rtCamp](https://rtcamp.com)
-* [Ryan Hellyer](https://geek.hellyer.kiwi)
-* [WP Chat](https://wpchat.com)
-* [WP Tavern](https://wptavern.com)
+[Alex Georgiou](https://www.alexgeorgiou.gr), [Automattic](https://automattic.com), [Brad Touesnard](https://bradt.ca), [Daniel Auener](http://www.danielauener.com), [Delicious Brains](https://deliciousbrains.com), [Greg Rickaby](https://gregrickaby.com), [Matt Mullenweg](https://ma.tt), [Mika Epstein](https://halfelf.org), [Mike Garrett](https://mikengarrett.com), [Samuel Wood](http://ottopress.com), [Scott Reilly](http://coffee2code.com), [Jan Dembowski](https://profiles.wordpress.org/jdembowski), [Jeff Starr](https://perishablepress.com), [Jeff Chandler](https://jeffc.me), [Jeff Matson](https://jeffmatson.net), [Jeremy Wagner](https://jeremywagner.me), [John James Jacoby](https://jjj.blog), [Leland Fiegel](https://leland.me), [Luke Cavanagh](https://github.com/lukecav), [Mike Jolley](https://mikejolley.com), [Pau Iglesias](https://pauiglesias.com), [Paul Irish](https://www.paulirish.com), [Rahul Bansal](https://profiles.wordpress.org/rahul286), [Roots](https://roots.io), [rtCamp](https://rtcamp.com), [Ryan Hellyer](https://geek.hellyer.kiwi), [WP Chat](https://wpchat.com), [WP Tavern](https://wptavern.com)
 
 #### Disclaimer ####
 
-We released this plugin in response to our managed hosting clients asking for better access to their server, and our primary goal will remain supporting that purpose. Although we are 100% open to fielding requests from the WordPress community, we kindly ask that you keep the above-mentioned goals in mind... thanks!
+We released this plugin in response to our managed hosting clients asking for better access to their server, and our primary goal will remain supporting that purpose. Although we are 100% open to fielding requests from the WordPress community, we kindly ask that you keep the above-mentioned goals in mind, and refrain from slandering, threatening, or harassing our team members... thank you!
+
+### Philosophy ####
+
+> "Everything should be made as simple as possible, but no simpler." -- Albert Einstein
+
+> "Write programs that do one thing and do it well... write programs to work together." -- Doug McIlroy
+
+> "The innovation that this industry talks about so much is bullshit. Anybody can innovate... 99% of it is 'Get the work done.' The real work is in the details." -- Linus Torvalds
 
 == Installation ==
 
 1. Upload to `/wp-content/plugins/speed-demon-littlebizzy`
 2. Activate via WP Admin > Plugins
-3. Test plugin is working
+3. Test plugin is working:
+
+After activating the plugin, all defined constants should work properly. Don't forget to purge all caches.
 
 == Frequently Asked Questions ==
 
@@ -285,11 +210,11 @@ Because that would mean database queries and more time/hassle/confusion for setu
 
 = Does it work alongside XYZ plugin? =
 
-Yes, it will work no matter what plugins/theme you have installed, there should be no conflicts.
+Yes, it will work no matter what plugins/theme you have installed, there should be no conflicts. However we don't recommend using other similar performance plugins at the same time as Speed Demon to avoid conflicts or redundancy.
 
 = My site looks horrible after installing this? =
 
-Turn off Inline Styles using the defined constant `define('INLINE_STYLES', 'false');` and consider ditching whatever bloated and horribly coded plugin is causing the problem, such as janky "slider" plugins, etc.
+Turn off Inline Styles using the defined constant `define('INLINE_STYLES', 'false');` and consider ditching whatever bloated and horribly coded plugin is causing the problem, such as janky "slider" plugins, etc. Also ensure you are using PHP 7+
 
 = Why don't you support defer, async, or concantenation of JS/CSS files? =
 
@@ -305,6 +230,8 @@ Please avoid leaving negative reviews in order to get a feature implemented. Joi
 * bundles Minify HTML 1.0.0
 * default status for Inline Styles is now = false
 * default status for Disable Admin-AJAX is now = false
+* optimized plugin code
+* fixed error for PHP < 7.0 ...you're welcome, PHP 5 babies... now upgrade! ;) e.g. `Parse error: syntax error, unexpected 'default' (T_DEFAULT), expecting identifier (T_STRING) in ../wp-content/plugins/speed-demon-littlebizzy/modules/remove-query-strings/core/filter.php on line 116`
 
 = 1.1.0 =
 * bundles Disable Admin-AJAX 1.0.0
