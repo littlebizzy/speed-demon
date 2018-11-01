@@ -134,7 +134,7 @@ Any of our WordPress plugins may also be loaded as "Must-Use" plugins by using o
     define('DISABLE_EMBEDS', true);
     define('DISABLE_EMBEDS_ALLOWED_SOURCES', 'none');
     define('DISABLE_EMOJIS', true);
-    define('DISABLE_JQUERY_MIGRATE', false);
+    define('DISABLE_JQUERY_MIGRATE', true);
     define('DISABLE_POST_VIA_EMAIL', true);
     define('DISABLE_XML_RPC', true);
     define('HEADER_CLEANUP', true);
