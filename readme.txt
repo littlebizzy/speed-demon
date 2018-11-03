@@ -24,11 +24,9 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 * [Plugin GitHub](https://github.com/littlebizzy/speed-demon)
 * [SlickStack](https://slickstack.io)
 
-#### The Long Version ####
+#### Current Features ####
 
-Speed Demon is a lightweight PHP-only plugin that bundles several of our popular performance micro-plugins into a single plugin. All functions can be controlled precisely using defined constants.
-
-Current features:
+Speed Demon is a lightweight PHP-only plugin that bundles several of our popular performance micro-plugins into a single plugin. All functions can be controlled precisely using defined constants. The purpose of this plugin is to bundle several of our popular performance plugins into one single plugin for easier installation and management. In order to do this efficiently, however, Speed Demon maintains our popular "no settings page" approach to avoid database queries and instability/setup requirements. The most stable functions (sub-plugins) are enabled by default, while less predictable functions (sub-plugins) such as Inline Styles are disabled by default. In order to enable or disable any given function (sub-plugin) simply use the defined constants below inside your wp-config.php file or using our free Custom Functions plugin instead.
 
 * [Delete Expired Transients](https://wordpress.org/plugins/delete-expired-transients-littlebizzy/)
 * [Disable Admin-AJAX](https://wordpress.org/plugins/disable-admin-ajax-littlebizzy/)
@@ -38,80 +36,31 @@ Current features:
 * [Disable jQuery Migrate](https://wordpress.org/plugins/disable-jq-migrate-littlebizzy/)
 * [Disable Post Via Email](https://wordpress.org/plugins/disable-post-via-email-littlebizzy/)
 * [Disable XML-RPC](https://wordpress.org/plugins/disable-xml-rpc-littlebizzy/)
+    * Disable pingbacks
+    * Disable trackbacks
+    * Disable XML-RPC
 * [Header Cleanup](https://wordpress.org/plugins/header-cleanup-littlebizzy/)
+    * Remove `adjacent_posts_rel_link`
+    * Remove `adjacent_posts_rel_link_wp_head`
+    * Remove `feed_links`
+    * Remove `feed_links_extra`
+    * Remove `index_rel_link`
+    * Remove `parent_post_rel_link`
+    * Remove `rest_output_link_wp_head`
+    * Remove `rsd_link`
+    * Remove `start_post_rel_link`
+    * Remove `wc_generator_tag`
+    * Remove `wlwmanifest_link`
+    * Remove `wp_generator`
+    * Remove `wp_resource_hints`
+    * Remove `wp_shortlink_wp_head`
 * [Index Autoload](https://wordpress.org/plugins/index-autoload-littlebizzy/)
 * [Inline Styles](https://wordpress.org/plugins/inline-styles-littlebizzy/)
 * [Minify HTML](https://wordpress.org/plugins/minify-html-littlebizzy/)
 * [Remove Query Strings](https://wordpress.org/plugins/remove-query-strings-littlebizzy/)
 * (more modules coming soon...)
 
-...if you wish to disable a certain module, see notes below (must add a line of code tou your wp-config file to disable a certain module). This helps avoid pointless (slow and unnecessary) settings pages and database queries.
-
-1.0.0 = BETA VERSION (we will be adding more features gradually). The purpose of this plugin is to bundle several of our popular performance plugins into one single plugin for easier installation and management. In order to do this efficiently, however, Speed Demon maintains our popular "no settings page" approach to avoid database queries and instability/setup requirements. The most stable functions (sub-plugins) are enabled by default, while less predictable functions (sub-plugins) such as Inline Styles are disabled by default. In order to enable or disable any given function (sub-plugin) simply use the defined constants below inside your wp-config.php file or using our free Custom Functions plugin instead.
-
 Note: these defined constants are ONLY supported within Speed Demon. If you have one of these installed as a standalone plugin already, that function WILL REMAIN ENABLED until you disable the standalone version of the function. For example, if you disable Index Autoload in Speed Demon using a defined constant, but you still have our other Index Autoload plugin installed + enabled, then that function will continue to function until you disable or delete the standalone Index Autoload plugin. This allows for web hosts or other agencies to force-control their WordPress environment using our standalone plugins.
-
-===
-
-Developer notes 1.0.0
-
-- The constant that controls the plugin (the one with the same plugin/module name) when it does not exists or has the value `true`is when it allows the module execution, and with a `false`value it prevents the execution
-
-- Each module checks some constant(s) and class(es) from the original plugin release, and if some are detected then aborts the module execution. this is the sequence when a module ask if can continue the execution:
-
-- First check the existence of the corresponding module constants (REMOVE_QUERY_STRINGS, DISABLE_XML_RPC) and stops the module execution if defined with a false value.
-- Next step looks for a inherent constant of the original plugin to check if is running (RMQRST_FILE for Remove Query Strings, \LittleBizzy\DisableEmojis\FILE for Disable Emojis, etc.), aborting if detect the previous plugin.
-- Sometimes the original plugin does not have a constant (code from other developers), so just in case checks the plugin class existence (\LB_Disable_XML_RPC etc.)
-- But these checks do not do anything with the original plugin optional constants: REMOVE_QUERY_STRINGS_ARGS, DELETE_EXPIRED_TRANSIENTS_HOURS, etc.)
-
-- These checks of existing constants and classes are performed as late as possible, in order to give time to execute these constants/classes from different locations: wp-config.php, other plugins, functions.php from theme, etc.
-
-===
-
-- Some modules code have changes from the original due the common module/plugin adaptation mechanisms, but I tried to keep the original code fragments (Always will need small changes: namespaces, a separated main module folder, calls to check if the module is enabled, unified activation/deactivacion/uninstall hooks, etc.)
-
-Regarding the modules:
-
-- Remove Query Strings
-The cancellation check works right on the style and loader filters.
-
-- Disable XML-RPC
-The last minute check occurs after the WP init hook. I have reorganized the plugin structure to fit the common module mechanism.
-
-- Disable Embeds
-Checks constants/classes at the beginning and after the init hook. Tested the correct execution on activation/deactivation hooks.
-
-- Disable Emojis
-Checks constants/classes at first and also after the init hook.
-
-- Index Autoload
-Checks constants/classes after the init hook. Tested the index removal and internal option deleted (used to save the timestamp) on plugin uninstall.
-
-- Delete Expired Transients
-Checking on start and under cron event execution.
-
-- Disable Post Via Email
-Just checks on start, it is not possible to check the module later due the early execution in wp-mail.php
-
-- Inline Styles
-Checks on start, and on the `wp_loaded` hook.
-
-===
-
-Developer notes 1.1.0 (still beta)
-
-- Disable Admin-AJAX
-The associated constant must be defined at the wp-config.php level because this module does not use any wp hook and runs at the same time of the plugin execution.
-
-- Disable Cart Fragments
-There is a conflict with previous constant DISABLE_CART_FRAGMENTS, which if exists is expected to be an array from the old plugin. The new module supports the different data types (boolean or array), but if the constant remains boolean and the old plugin is activated, then the `true`value is interpreted as page 1 (due the type casting).
-The last check looking if the module is enabled works just before to remove the enqueued carts fragments scripts, so this module constant can be located anywhere.
-
-- Disable jQuery Migrate
-Module is checked on the wp_default_scripts WP core hook, so the module constant can be defined in any place.
-
-- Header Cleanup
-Plugin functionality is checked at WP init hook, so the module constant can be defined anywhere.
 
 #### Compatibility ####
 
@@ -155,7 +104,7 @@ Any of our WordPress plugins may also be loaded as "Must-Use" plugins by using o
     define('REMOVE_QUERY_STRINGS', true);
     define('REMOVE_QUERY_STRINGS_ARGS', 'v,ver,version');
 
-#### Plugin Features ####
+#### Technical Details ####
 
 * Parent Plugin: N/A
 * Disable Nag Notices: [Yes](https://codex.wordpress.org/Plugin_API/Action_Reference/admin_notices#Disable_Nag_Notices)
@@ -182,7 +131,7 @@ Any of our WordPress plugins may also be loaded as "Must-Use" plugins by using o
 
 We released this plugin in response to our managed hosting clients asking for better access to their server, and our primary goal will remain supporting that purpose. Although we are 100% open to fielding requests from the WordPress community, we kindly ask that you keep the above-mentioned goals in mind, and refrain from slandering, threatening, or harassing our team members... thank you!
 
-#### Philosophy ####
+#### Our Philosophy ####
 
 > "Everything should be made as simple as possible, but no simpler." -- Albert Einstein
 
@@ -219,6 +168,60 @@ Turn off Inline Styles using the defined constant `define('INLINE_STYLES', 'fals
 = Why don't you support defer, async, or concantenation of JS/CSS files? =
 
 No serious website uses these methods. Don't believe us? Check the Alexa Top 100 sites and look at their source code. You will never see any high traffic or serious website using these methods because they are so risky. "But PageSpeed Insights told me to! I'm scared of Google!" ... do what you wish, we know from experience it will not help your rankings (or speed, in the vast majority of cases... and no, "scores" are not the same as "speed"). Rather than altering or manipulating the loading order (or loading location) of JS/CSS it makes much more sense to only install plugins or themes from quality authors, who should be trusted to load JS/CSS resources how and where they want. The only method we currently support is inlining all CSS stylesheets, which should work fine on 90% of WordPress sites (bloated/unstable plugins like sliders may have an issue). Likewise, many JS scripts inherently support defer/async, such as Google's Universal Analytics snippet. We don't believe in "hacky" solutions, but rather in trusting code sources to handle these things (in other words, choose your software wisely). Lastly, if you really want to concatenate all your JS into one crap-pile, it would be better to let you CDN provider do this for you (such as CloudFlare's free RocketLoader feature) rather than bundling your JS into some nasty temp file on your origin server.
+
+= What if I already have the corresponding micro-plugin installed? =
+
+Each module checks some constant(s) and class(es) from the original plugin release, and if some are detected then aborts the module execution. this is the sequence when a module ask if can continue the execution:
+
+* First check the existence of the corresponding module constants (REMOVE_QUERY_STRINGS, DISABLE_XML_RPC) and stops the module execution if defined with a false value.
+* Next step looks for a inherent constant of the original plugin to check if is running (RMQRST_FILE for Remove Query Strings, \LittleBizzy\DisableEmojis\FILE for Disable Emojis, etc.), aborting if detect the previous plugin.
+* Sometimes the original plugin does not have a constant (code from other developers), so just in case checks the plugin class existence (\LB_Disable_XML_RPC etc.)
+* But these checks do not do anything with the original plugin optional constants: REMOVE_QUERY_STRINGS_ARGS, DELETE_EXPIRED_TRANSIENTS_HOURS, etc.)
+
+These checks of existing constants and classes are performed as late as possible, in order to give time to execute these constants/classes from different locations: wp-config.php, other plugins, functions.php from theme, etc.
+
+= Technically speaking, how does it check for micro-plugin code? =
+
+Some modules code have changes from the original due the common module/plugin adaptation mechanisms, but I tried to keep the original code fragments (Always will need small changes: namespaces, a separated main module folder, calls to check if the module is enabled, unified activation/deactivacion/uninstall hooks, etc.)
+
+Regarding the modules:
+
+- Remove Query Strings
+The cancellation check works right on the style and loader filters.
+
+- Disable XML-RPC
+The last minute check occurs after the WP init hook. I have reorganized the plugin structure to fit the common module mechanism.
+
+- Disable Embeds
+Checks constants/classes at the beginning and after the init hook. Tested the correct execution on activation/deactivation hooks.
+
+- Disable Emojis
+Checks constants/classes at first and also after the init hook.
+
+- Index Autoload
+Checks constants/classes after the init hook. Tested the index removal and internal option deleted (used to save the timestamp) on plugin uninstall.
+
+- Delete Expired Transients
+Checking on start and under cron event execution.
+
+- Disable Post Via Email
+Just checks on start, it is not possible to check the module later due the early execution in wp-mail.php
+
+- Inline Styles
+Checks on start, and on the `wp_loaded` hook.
+
+- Disable Admin-AJAX
+The associated constant must be defined at the wp-config.php level because this module does not use any wp hook and runs at the same time of the plugin execution.
+
+- Disable Cart Fragments
+There is a conflict with previous constant DISABLE_CART_FRAGMENTS, which if exists is expected to be an array from the old plugin. The new module supports the different data types (boolean or array), but if the constant remains boolean and the old plugin is activated, then the `true`value is interpreted as page 1 (due the type casting).
+The last check looking if the module is enabled works just before to remove the enqueued carts fragments scripts, so this module constant can be located anywhere.
+
+- Disable jQuery Migrate
+Module is checked on the wp_default_scripts WP core hook, so the module constant can be defined in any place.
+
+- Header Cleanup
+Plugin functionality is checked at WP init hook, so the module constant can be defined anywhere.
 
 = I have a suggestion, how can I let you know? =
 
