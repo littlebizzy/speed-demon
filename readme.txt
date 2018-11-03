@@ -26,15 +26,18 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 
 #### Current Features ####
 
-Speed Demon is a lightweight PHP-only plugin that bundles several of our popular performance micro-plugins into a single plugin. All functions can be controlled precisely using defined constants. The purpose of this plugin is to bundle several of our popular performance plugins into one single plugin for easier installation and management. In order to do this efficiently, however, Speed Demon maintains our popular "no settings page" approach to avoid database queries and instability/setup requirements. The most stable functions (sub-plugins) are enabled by default, while less predictable functions (sub-plugins) such as Inline Styles are disabled by default. In order to enable or disable any given function (sub-plugin) simply use the defined constants below inside your wp-config.php file or using our free Custom Functions plugin instead.
-
 * [Delete Expired Transients](https://wordpress.org/plugins/delete-expired-transients-littlebizzy/)
 * [Disable Admin-AJAX](https://wordpress.org/plugins/disable-admin-ajax-littlebizzy/)
 * [Disable Cart Fragments](https://wordpress.org/plugins/disable-cart-fragments-littlebizzy/)
 * [Disable Embeds](https://wordpress.org/plugins/disable-embeds-littlebizzy/)
 * [Disable Emojis](https://wordpress.org/plugins/disable-emojis-littlebizzy/)
+* *Disable Feeds (1.3+)*
 * [Disable jQuery Migrate](https://wordpress.org/plugins/disable-jq-migrate-littlebizzy/)
+* *Disable Pinging (1.3+)*
 * [Disable Post Via Email](https://wordpress.org/plugins/disable-post-via-email-littlebizzy/)
+* *Disable REST API (1.3+)*
+* *Disable WooCommerce Status (1.3+)*
+* *Disable WooCommerce Styles (1.3+)*
 * [Disable XML-RPC](https://wordpress.org/plugins/disable-xml-rpc-littlebizzy/)
     * Disable pingbacks
     * Disable trackbacks
@@ -59,8 +62,6 @@ Speed Demon is a lightweight PHP-only plugin that bundles several of our popular
 * [Minify HTML](https://wordpress.org/plugins/minify-html-littlebizzy/)
 * [Remove Query Strings](https://wordpress.org/plugins/remove-query-strings-littlebizzy/)
 * (more modules coming soon...)
-
-Note: these defined constants are ONLY supported within Speed Demon. If you have one of these installed as a standalone plugin already, that function WILL REMAIN ENABLED until you disable the standalone version of the function. For example, if you disable Index Autoload in Speed Demon using a defined constant, but you still have our other Index Autoload plugin installed + enabled, then that function will continue to function until you disable or delete the standalone Index Autoload plugin. This allows for web hosts or other agencies to force-control their WordPress environment using our standalone plugins.
 
 #### Compatibility ####
 
@@ -148,6 +149,14 @@ We released this plugin in response to our managed hosting clients asking for be
 After activating the plugin, all defined constants should work properly. Don't forget to purge all caches.
 
 == Frequently Asked Questions ==
+
+= What makes this plugin different from others? =
+
+Speed Demon is a lightweight PHP-only plugin that bundles several of our popular performance micro-plugins into a single plugin. All functions can be controlled precisely using defined constants. The purpose of this plugin is to bundle several of our popular performance plugins into one single plugin for easier installation and management. In order to do this efficiently, however, Speed Demon maintains our popular "no settings page" approach to avoid database queries and instability/setup requirements. The most stable functions (sub-plugins) are enabled by default, while less predictable functions (sub-plugins) such as Inline Styles are disabled by default. In order to enable or disable any given function (sub-plugin) simply use the defined constants below inside your wp-config.php file or using our free Custom Functions plugin instead.
+
+= Do all your plugins support the defined constants? =
+
+Note: these defined constants are ONLY supported within Speed Demon. If you have one of these installed as a standalone plugin already, that function WILL REMAIN ENABLED until you disable the standalone version of the function. For example, if you disable Index Autoload in Speed Demon using a defined constant, but you still have our other Index Autoload plugin installed + enabled, then that function will continue to function until you disable or delete the standalone Index Autoload plugin. This allows for web hosts or other agencies to force-control their WordPress environment using our standalone plugins.
 
 = How can I change this plugin's settings? =
 
