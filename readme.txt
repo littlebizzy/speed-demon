@@ -22,7 +22,6 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 * [**Worth a 5-star review? Thank you!**](https://wordpress.org/support/plugin/speed-demon-littlebizzy/reviews/?rate=5#new-post)
 * [Plugin Homepage](https://www.littlebizzy.com/plugins/speed-demon)
 * [Plugin GitHub](https://github.com/littlebizzy/speed-demon)
-* [SlickStack](https://slickstack.io)
 
 #### Current Features ####
 
@@ -69,7 +68,7 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 
 #### Compatibility ####
 
-This plugin has been designed for use on LEMP (Nginx) web servers with PHP 7.2 and MySQL 5.7 to achieve best performance. All of our plugins are meant for single site WordPress installations only; for both performance and usability reasons, we highly recommend avoiding WordPress Multisite for the vast majority of projects.
+This plugin has been designed for use on [SlickStack](https://slickstack.io) web servers with PHP 7.2 and MySQL 5.7 to achieve best performance. All of our plugins are meant for single site WordPress installations only; for both performance and usability reasons, we highly recommend avoiding WordPress Multisite for the vast majority of projects.
 
 Any of our WordPress plugins may also be loaded as "Must-Use" plugins by using our free [Autoloader](https://github.com/littlebizzy/autoloader) script in the `mu-plugins` directory.
 
@@ -134,7 +133,7 @@ Any of our WordPress plugins may also be loaded as "Must-Use" plugins by using o
 
 #### Disclaimer ####
 
-We released this plugin in response to our managed hosting clients asking for better access to their server, and our primary goal will remain supporting that purpose. Although we are 100% open to fielding requests from the WordPress community, we kindly ask that you keep the above-mentioned goals in mind, and refrain from slandering, threatening, or harassing our team members... thank you!
+We released this plugin in response to our managed hosting clients asking for better access to their server, and our primary goal will remain supporting that purpose. Although we are 100% open to fielding requests from the WordPress community, we kindly ask that you keep these conditions in mind, and refrain from slandering, threatening, or harassing our team members in order to get a feature added, or to otherwise get "free" support. The only place you should be contacting us is in our free [**Facebook group**](https://www.facebook.com/groups/littlebizzy/) which has been setup for this purpose, or via GitHub if you are an experienced developer. Thank you!
 
 #### Our Philosophy ####
 
@@ -143,6 +142,10 @@ We released this plugin in response to our managed hosting clients asking for be
 > "Write programs that do one thing and do it well... write programs to work together." -- Doug McIlroy
 
 > "The innovation that this industry talks about so much is bullshit. Anybody can innovate... 99% of it is 'Get the work done.' The real work is in the details." -- Linus Torvalds
+
+#### Search Keywords ####
+
+wp fastest cache, wp rocket, pagespeed, google pagespeed, page speed, loading time, improve loading time, reduce loading time, speed up WordPress, speed optimization plugin, speed optimization service
 
 == Installation ==
 
