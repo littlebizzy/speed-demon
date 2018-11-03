@@ -2,8 +2,8 @@
 /*
 Plugin Name: Speed Demon
 Plugin URI: https://www.littlebizzy.com/plugins/speed-demon
-Description: A powerful bundle of lightweight tools and settings that drastically improve the loading speed of WordPress by reducing bulk and improving efficiency.
-Version: 1.2.0
+Description: A powerful bundle of lightweight tweaks that drastically improve the loading speed of WordPress by reducing bloat and improving overall efficiency.
+Version: 1.2.1
 Author: LittleBizzy
 Author URI: https://www.littlebizzy.com
 License: GPLv3
@@ -24,7 +24,7 @@ if (!function_exists('add_action'))
 // Plugin constants
 const FILE = __FILE__;
 const PREFIX = 'spddmn';
-const VERSION = '1.2.0';
+const VERSION = '1.2.1';
 
 // Loader
 require_once dirname(FILE).'/helpers/loader.php';
