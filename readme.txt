@@ -238,6 +238,9 @@ Please avoid leaving negative reviews in order to get a feature implemented. Joi
 
 == Changelog ==
 
+= 1.2.1 =
+* updated plugin meta
+
 = 1.2.0 =
 * bundles Minify HTML 1.0.0
 * default status for Inline Styles is now = false
