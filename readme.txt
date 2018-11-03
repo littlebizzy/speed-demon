@@ -26,6 +26,7 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 
 #### Current Features ####
 
+* *404 To Homepage (1.3+)*
 * [Delete Expired Transients](https://wordpress.org/plugins/delete-expired-transients-littlebizzy/)
 * [Disable Admin-AJAX](https://wordpress.org/plugins/disable-admin-ajax-littlebizzy/)
 * [Disable Cart Fragments](https://wordpress.org/plugins/disable-cart-fragments-littlebizzy/)
@@ -36,6 +37,7 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 * *Disable Pinging (1.3+)*
 * [Disable Post Via Email](https://wordpress.org/plugins/disable-post-via-email-littlebizzy/)
 * *Disable REST API (1.3+)*
+* *Disable Search (1.3+)*
 * *Disable WooCommerce Status (1.3+)*
 * *Disable WooCommerce Styles (1.3+)*
 * [Disable XML-RPC](https://wordpress.org/plugins/disable-xml-rpc-littlebizzy/)
@@ -59,6 +61,8 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
     * Remove `wp_shortlink_wp_head`
 * [Index Autoload](https://wordpress.org/plugins/index-autoload-littlebizzy/)
 * [Inline Styles](https://wordpress.org/plugins/inline-styles-littlebizzy/)
+* *Limit WP Cron (1.3+)*
+* *Limit Heartbeat (1.3+)*
 * [Minify HTML](https://wordpress.org/plugins/minify-html-littlebizzy/)
 * [Remove Query Strings](https://wordpress.org/plugins/remove-query-strings-littlebizzy/)
 * (more modules coming soon...)
