@@ -26,6 +26,7 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 #### Current Features ####
 
 * *404 To Homepage (1.3+)*
+* *Dashboard Cleanup (1.3+)*
 * [Delete Expired Transients](https://wordpress.org/plugins/delete-expired-transients-littlebizzy/)
 * [Disable Admin-AJAX](https://wordpress.org/plugins/disable-admin-ajax-littlebizzy/)
 * [Disable Cart Fragments](https://wordpress.org/plugins/disable-cart-fragments-littlebizzy/)
