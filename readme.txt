@@ -25,25 +25,39 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 
 #### Current Features ####
 
-* *404 To Homepage (1.3+)*
 * *Dashboard Cleanup (1.3+)*
+    * Remove WordPress.org shortcuts
+    * Remove "Thank you for creating with WordPress."
+    * Remove "If you like WooCommerce please leave us a rating. A huge thanks in advance!"
+    * Disable Welcome dashboard widget
+    * Disable Quick Draft dashboard widget
+    * Disable WordPress Events and News dashboard widget
 * [Delete Expired Transients](https://wordpress.org/plugins/delete-expired-transients-littlebizzy/)
+* *Delete Old Revisions (1.3+)*
+* *Delete Orphan Data (1.3+)*
 * [Disable Admin-AJAX](https://wordpress.org/plugins/disable-admin-ajax-littlebizzy/)
 * [Disable Cart Fragments](https://wordpress.org/plugins/disable-cart-fragments-littlebizzy/)
 * [Disable Embeds](https://wordpress.org/plugins/disable-embeds-littlebizzy/)
+    * Disable External Embeds (oEmbeds)
+    * Disable Self Embeds (Internal Embeds)
+    * (Allowed Sources supported)
 * [Disable Emojis](https://wordpress.org/plugins/disable-emojis-littlebizzy/)
 * *Disable Feeds (1.3+)*
+    * Disable RSS Feeds
+    * Disable Atom Feeds
+* *Disable Gutenberg (1.3+)*
 * [Disable jQuery Migrate](https://wordpress.org/plugins/disable-jq-migrate-littlebizzy/)
 * *Disable Pinging (1.3+)*
+    * Disable Update Services
 * [Disable Post Via Email](https://wordpress.org/plugins/disable-post-via-email-littlebizzy/)
 * *Disable REST API (1.3+)*
-* *Disable Search (1.3+)*
+* *Disable Widgets (1.3+)*
 * *Disable WooCommerce Status (1.3+)*
 * *Disable WooCommerce Styles (1.3+)*
 * [Disable XML-RPC](https://wordpress.org/plugins/disable-xml-rpc-littlebizzy/)
-    * Disable pingbacks
-    * Disable trackbacks
-    * Disable XML-RPC
+    * Disable Pingbacks
+    * Disable Self Ping (Pingbacks)
+    * Disable Trackbacks
 * [Header Cleanup](https://wordpress.org/plugins/header-cleanup-littlebizzy/)
     * Remove `adjacent_posts_rel_link`
     * Remove `adjacent_posts_rel_link_wp_head`
@@ -60,7 +74,9 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
     * Remove `wp_resource_hints`
     * Remove `wp_shortlink_wp_head`
 * [Index Autoload](https://wordpress.org/plugins/index-autoload-littlebizzy/)
+* *Inline Scripts (1.3+)*
 * [Inline Styles](https://wordpress.org/plugins/inline-styles-littlebizzy/)
+* *Lazy Load (1.3+)*
 * *Limit WP Cron (1.3+)*
 * *Limit Heartbeat (1.3+)*
 * [Minify HTML](https://wordpress.org/plugins/minify-html-littlebizzy/)
@@ -146,7 +162,7 @@ We released this plugin in response to our managed hosting clients asking for be
 
 #### Search Keywords ####
 
-wp fastest cache, wp rocket, pagespeed, google pagespeed, page speed, loading time, improve loading time, reduce loading time, speed up WordPress, speed optimization plugin, speed optimization service
+above the fold content wordpress plugin, best wordpress minify plugin, best wordpress speed plugin, google pagespeed, improve loading time, increase website speed wordpress plugin, loading time, page speed, pagespeed, parallel loading system, parallelize, reduce loading time, reduce page load time wordpress plugin, speed optimization plugin, speed optimization service, speed up WordPress, wordpress cache plugin, wordpress optimization, wordpress page speed, wordpress pagespeed, wordpress performance plugin, wordpress page speed, wordpress page speed, wordpress performance plugin, wordpress performance test, wp rocket wordpress plugin, wordpress site speed optimization plugin, wordpress speed optimization, wp fastest cache, wp rocket
 
 == Installation ==
 
