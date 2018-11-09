@@ -276,8 +276,6 @@ class Parser {
 			// Remove tabs and extra spacing
 			if ($spacing) {
 				$before = $this->spacing($before);
-				$before = str_replace('> ', '>', $before);
-				$before = str_replace(' <', '<', $before);
 			}
 
 			// Add chunk
