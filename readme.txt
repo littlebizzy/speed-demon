@@ -31,9 +31,10 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
     * Remove WordPress.org shortcuts
     * Remove "Thank you for creating with WordPress."
     * Remove "If you like WooCommerce please leave us a rating. A huge thanks in advance!"
-    * Disable Welcome dashboard widget
+    * Disable Welcome To WordPress admin notice
     * Disable Quick Draft dashboard widget
     * Disable WordPress Events and News dashboard widget
+    * Disable Gutenberg admin notice
 * [Delete Expired Transients](https://wordpress.org/plugins/delete-expired-transients-littlebizzy/)
 * *Delete Old Revisions (1.3+)*
 * *Delete Orphan Data (1.3+)*
@@ -49,6 +50,9 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
     * Disable Atom Feeds
 * *Disable Gravatars (1.3+)*
 * *Disable Gutenberg (1.3+)*
+    * Disable Gutenberg block editor
+    * Disable Gutenberg settings page
+    * Disable Gutenberg admin notice
 * [Disable jQuery Migrate](https://wordpress.org/plugins/disable-jq-migrate-littlebizzy/)
 * *Disable Pinging (1.3+)*
     * Disable Update Services
