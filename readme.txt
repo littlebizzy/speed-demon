@@ -25,6 +25,8 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 
 #### Current Features ####
 
+Below are the current and future functions supported by this plugin, which you can control using the defined constants listed below (scroll down). For more in-depth information, please also review the included FAQ section.
+
 * *Dashboard Cleanup (1.3+)*
     * Remove WordPress.org shortcuts
     * Remove "Thank you for creating with WordPress."
