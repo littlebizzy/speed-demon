@@ -7,7 +7,7 @@ Requires at least: 4.4
 Tested up to: 4.9
 Requires PHP: 7.2
 Multisite support: No
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Prefix: SPDDMN
@@ -25,8 +25,8 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 
 #### Current Features ####
 
-Below are the current and future functions supported by this plugin, which you can control using the defined constants listed below (scroll down). For more in-depth information, please also review the included FAQ section.
-
+* *Check Gzip Compression (1.3+)*
+* *Combine Google Fonts (1.3+)*
 * *Dashboard Cleanup (1.3+)*
     * Remove WordPress.org shortcuts
     * Remove "Thank you for creating with WordPress."
@@ -47,6 +47,7 @@ Below are the current and future functions supported by this plugin, which you c
 * *Disable Feeds (1.3+)*
     * Disable RSS Feeds
     * Disable Atom Feeds
+* *Disable Gravatars (1.3+)*
 * *Disable Gutenberg (1.3+)*
 * [Disable jQuery Migrate](https://wordpress.org/plugins/disable-jq-migrate-littlebizzy/)
 * *Disable Pinging (1.3+)*
@@ -156,6 +157,8 @@ We released this plugin in response to our managed hosting clients asking for be
 
 #### Our Philosophy ####
 
+> "Decisions, not options." -- WordPress.org
+
 > "Everything should be made as simple as possible, but no simpler." -- Albert Einstein
 
 > "Write programs that do one thing and do it well... write programs to work together." -- Doug McIlroy
@@ -164,7 +167,7 @@ We released this plugin in response to our managed hosting clients asking for be
 
 #### Search Keywords ####
 
-above the fold content wordpress plugin, best wordpress minify plugin, best wordpress speed plugin, google pagespeed, improve loading time, increase website speed wordpress plugin, loading time, page speed, pagespeed, parallel loading system, parallelize, reduce loading time, reduce page load time wordpress plugin, speed optimization plugin, speed optimization service, speed up WordPress, wordpress cache plugin, wordpress optimization, wordpress page speed, wordpress pagespeed, wordpress performance plugin, wordpress page speed, wordpress page speed, wordpress performance plugin, wordpress performance test, wp rocket wordpress plugin, wordpress site speed optimization plugin, wordpress speed optimization, wp fastest cache, wp rocket
+above the fold content wordpress plugin, best wordpress minify plugin, best wordpress speed plugin, clearfy, google pagespeed, gtmetrix, improve loading time, increase website speed wordpress plugin, loading time, minify, page speed, page speed optimization, pagespeed, pagespeed optimization, parallel loading system, parallelize, pingdom, reduce loading time, reduce page load time wordpress plugin, speed booster pack, speed optimization plugin, speed optimization service, speed up WordPress, wordpress cache plugin, wordpress optimization, wordpress page speed, wordpress pagespeed, wordpress performance plugin, wordpress page speed, wordpress page speed, wordpress performance plugin, wordpress performance test, wordpress site speed optimization plugin, wordpress speed optimization, wp disable, wp fastest cache, wp rocket, wp rocket wordpress plugin, wp super minify
 
 == Installation ==
 
@@ -263,6 +266,10 @@ Plugin functionality is checked at WP init hook, so the module constant can be d
 Please avoid leaving negative reviews in order to get a feature implemented. Join our Facebook group instead.
 
 == Changelog ==
+
+= 1.2.2 =
+* updated Minify HTML 1.0.1
+* (fixed bug in REMOVE_EXTRA_SPACING that was removing spaces before/after inline HTML tags)
 
 = 1.2.1 =
 * updated plugin meta
