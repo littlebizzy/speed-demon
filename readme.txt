@@ -169,10 +169,6 @@ We released this plugin in response to our managed hosting clients asking for be
 
 > "The innovation that this industry talks about so much is bullshit. Anybody can innovate... 99% of it is 'Get the work done.' The real work is in the details." -- Linus Torvalds
 
-#### Search Keywords ####
-
-above the fold content wordpress plugin, best wordpress minify plugin, best wordpress speed plugin, clearfy, google pagespeed, gtmetrix, improve loading time, increase website speed wordpress plugin, loading time, minify, page speed, page speed optimization, pagespeed, pagespeed optimization, parallel loading system, parallelize, pingdom, reduce loading time, reduce page load time wordpress plugin, speed booster pack, speed optimization plugin, speed optimization service, speed up WordPress, wordpress cache plugin, wordpress optimization, wordpress page speed, wordpress pagespeed, wordpress performance plugin, wordpress page speed, wordpress page speed, wordpress performance plugin, wordpress performance test, wordpress site speed optimization plugin, wordpress speed optimization, wp disable, wp fastest cache, wp rocket, wp rocket wordpress plugin, wp super minify
-
 == Installation ==
 
 1. Upload to `/wp-content/plugins/speed-demon-littlebizzy`
