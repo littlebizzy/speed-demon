@@ -85,6 +85,11 @@ final class Modules extends Helpers\Singleton {
 			'constants' => '\LittleBizzy\MinifyHTML\FILE',
 			'classes'	=> '\LittleBizzy\MinifyHTML\Core\Core',
 		],
+
+		'disable-gutenberg' => [
+			'constants' => '\LittleBizzy\DisableGutenberg\FILE',
+			'classes'	=> '\LittleBizzy\DisableGutenberg\Core\Core',
+		],
 	];
 
 
