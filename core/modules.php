@@ -92,11 +92,13 @@ final class Modules extends Helpers\Singleton {
 		],
 
 		'disable-woocommerce-status' => [
+			'default'	=> false,
 			'constants' => 'DWCSTS_VERSION',
 			'classes'	=> '\DWCSTS',
 		],
 
 		'disable-woocommerce-styles' => [
+			'default'	=> false,
 			'constants' => 'DWCSTY_FILE',
 			'classes'	=> '\DWCSTY_Core_Filter',
 		],
