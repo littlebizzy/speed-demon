@@ -90,6 +90,16 @@ final class Modules extends Helpers\Singleton {
 			'constants' => '\LittleBizzy\DisableGutenberg\FILE',
 			'classes'	=> '\LittleBizzy\DisableGutenberg\Core\Core',
 		],
+
+		'disable-woocommerce-status' => [
+			'constants' => 'DWCSTS_VERSION',
+			'classes'	=> '\DWCSTS',
+		],
+
+		'disable-woocommerce-styles' => [
+			'constants' => 'DWCSTY_FILE',
+			'classes'	=> '\DWCSTY_Core_Filter',
+		],
 	];
 
 
