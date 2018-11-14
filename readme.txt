@@ -4,10 +4,10 @@ Contributors: littlebizzy
 Donate link: https://www.patreon.com/littlebizzy
 Tags: speed, pagespeed, performance, loading, time
 Requires at least: 4.4
-Tested up to: 4.9
+Tested up to: 5.0
 Requires PHP: 7.2
 Multisite support: No
-Stable tag: 1.2.2
+Stable tag: 1.3.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Prefix: SPDDMN
@@ -25,9 +25,9 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 
 #### Current Features ####
 
-* *Check Gzip Compression (1.3+)*
-* *Combine Google Fonts (1.3+)*
-* *Dashboard Cleanup (1.3+)*
+* *Check Gzip Compression (1.4+)*
+* *Combine Google Fonts (1.4+)*
+* *Dashboard Cleanup (1.4+)*
     * Remove WordPress.org shortcuts
     * Remove "Thank you for creating with WordPress."
     * Remove "If you like WooCommerce please leave us a rating. A huge thanks in advance!"
@@ -35,9 +35,11 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
     * Disable Quick Draft dashboard widget
     * Disable WordPress Events and News dashboard widget
     * Disable Gutenberg admin notice
-* [Delete Expired Transients](https://wordpress.org/plugins/delete-expired-transients-littlebizzy/)
-* *Delete Old Revisions (1.3+)*
-* *Delete Orphan Data (1.3+)*
+* *Database Cleanup (1.4+)*
+    * [Delete Expired Transients](https://wordpress.org/plugins/delete-expired-transients-littlebizzy/)
+    * *Delete Old Revisions (1.4+)*
+    * *Delete Orphan Data (1.4+)*
+    * [Index Autoload](https://wordpress.org/plugins/index-autoload-littlebizzy/)
 * [Disable Admin-AJAX](https://wordpress.org/plugins/disable-admin-ajax-littlebizzy/)
 * [Disable Cart Fragments](https://wordpress.org/plugins/disable-cart-fragments-littlebizzy/)
 * [Disable Embeds](https://wordpress.org/plugins/disable-embeds-littlebizzy/)
@@ -45,22 +47,22 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
     * Disable Self Embeds (Internal Embeds)
     * (Allowed Sources supported)
 * [Disable Emojis](https://wordpress.org/plugins/disable-emojis-littlebizzy/)
-* *Disable Feeds (1.3+)*
+* *Disable Feeds (1.4+)*
     * Disable RSS Feeds
     * Disable Atom Feeds
-* *Disable Gravatars (1.3+)*
-* *Disable Gutenberg (1.3+)*
+* *Disable Gravatars (1.4+)*
+* [Disable Gutenberg](https://wordpress.org/plugins/disable-gutenberg-littlebizzy/)
     * Disable Gutenberg block editor
     * Disable Gutenberg settings page
     * Disable Gutenberg admin notice
 * [Disable jQuery Migrate](https://wordpress.org/plugins/disable-jq-migrate-littlebizzy/)
-* *Disable Pinging (1.3+)*
+* *Disable Pinging (1.4+)*
     * Disable Update Services
 * [Disable Post Via Email](https://wordpress.org/plugins/disable-post-via-email-littlebizzy/)
-* *Disable REST API (1.3+)*
-* *Disable Widgets (1.3+)*
-* *Disable WooCommerce Status (1.3+)*
-* *Disable WooCommerce Styles (1.3+)*
+* *Disable REST API (1.4+)*
+* *Disable Widgets (1.4+)*
+* [Disable WooCommerce Status](https://wordpress.org/plugins/disable-wc-status-littlebizzy/)
+* [Disable WooCommerce Styles](https://wordpress.org/plugins/disable-wc-styles-littlebizzy/)
 * [Disable XML-RPC](https://wordpress.org/plugins/disable-xml-rpc-littlebizzy/)
     * Disable Pingbacks
     * Disable Self Ping (Pingbacks)
@@ -80,12 +82,11 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
     * Remove `wp_generator`
     * Remove `wp_resource_hints`
     * Remove `wp_shortlink_wp_head`
-* [Index Autoload](https://wordpress.org/plugins/index-autoload-littlebizzy/)
-* *Inline Scripts (1.3+)*
+* *Inline Scripts (1.4+)*
 * [Inline Styles](https://wordpress.org/plugins/inline-styles-littlebizzy/)
-* *Lazy Load (1.3+)*
-* *Limit WP Cron (1.3+)*
-* *Limit Heartbeat (1.3+)*
+* *Lazy Load (1.4+)*
+* *Limit WP Cron (1.4+)*
+* *Limit Heartbeat (1.4+)*
 * [Minify HTML](https://wordpress.org/plugins/minify-html-littlebizzy/)
 * [Remove Query Strings](https://wordpress.org/plugins/remove-query-strings-littlebizzy/)
 * (more modules coming soon...)
@@ -111,6 +112,7 @@ Any of our WordPress plugins may also be loaded as "Must-Use" plugins by using o
     define('DISABLE_EMBEDS', true);
     define('DISABLE_EMBEDS_ALLOWED_SOURCES', 'none');
     define('DISABLE_EMOJIS', true);
+    define('DISABLE_GUTENBERG', true);
     define('DISABLE_JQUERY_MIGRATE', true);
     define('DISABLE_POST_VIA_EMAIL', true);
     define('DISABLE_XML_RPC', true);
@@ -131,6 +133,10 @@ Any of our WordPress plugins may also be loaded as "Must-Use" plugins by using o
     define('MINIFY_HTML_UTF8_SUPPORT', true);
     define('REMOVE_QUERY_STRINGS', true);
     define('REMOVE_QUERY_STRINGS_ARGS', 'v,ver,version');
+    define('DISABLE_WOOCOMMERCE_STATUS', false);
+    define('DISABLE_WOOCOMMERCE_STYLES', false);
+    define(DISABLE_WOOCOMMERCE_STYLES_NAMES, 'select2');
+    define('DISABLE_WOOCOMMERCE_STYLES_PREFIXES', 'woocommerce,wc');
 
 #### Technical Details ####
 
@@ -151,23 +157,9 @@ Any of our WordPress plugins may also be loaded as "Must-Use" plugins by using o
 * Multisite Support: No
 * Uninstalls Data: Yes
 
-#### Special Thanks ####
-
-[Alex Georgiou](https://www.alexgeorgiou.gr), [Automattic](https://automattic.com), [Brad Touesnard](https://bradt.ca), [Daniel Auener](http://www.danielauener.com), [Delicious Brains](https://deliciousbrains.com), [Greg Rickaby](https://gregrickaby.com), [Matt Mullenweg](https://ma.tt), [Mika Epstein](https://halfelf.org), [Mike Garrett](https://mikengarrett.com), [Samuel Wood](http://ottopress.com), [Scott Reilly](http://coffee2code.com), [Jan Dembowski](https://profiles.wordpress.org/jdembowski), [Jeff Starr](https://perishablepress.com), [Jeff Chandler](https://jeffc.me), [Jeff Matson](https://jeffmatson.net), [Jeremy Wagner](https://jeremywagner.me), [John James Jacoby](https://jjj.blog), [Leland Fiegel](https://leland.me), [Luke Cavanagh](https://github.com/lukecav), [Mike Jolley](https://mikejolley.com), [Pau Iglesias](https://pauiglesias.com), [Paul Irish](https://www.paulirish.com), [Rahul Bansal](https://profiles.wordpress.org/rahul286), [Roots](https://roots.io), [rtCamp](https://rtcamp.com), [Ryan Hellyer](https://geek.hellyer.kiwi), [WP Chat](https://wpchat.com), [WP Tavern](https://wptavern.com)
-
 #### Disclaimer ####
 
 We released this plugin in response to our managed hosting clients asking for better access to their server, and our primary goal will remain supporting that purpose. Although we are 100% open to fielding requests from the WordPress community, we kindly ask that you keep these conditions in mind, and refrain from slandering, threatening, or harassing our team members in order to get a feature added, or to otherwise get "free" support. The only place you should be contacting us is in our free [**Facebook group**](https://www.facebook.com/groups/littlebizzy/) which has been setup for this purpose, or via GitHub if you are an experienced developer. Thank you!
-
-#### Our Philosophy ####
-
-> "Decisions, not options." -- WordPress.org
-
-> "Everything should be made as simple as possible, but no simpler." -- Albert Einstein
-
-> "Write programs that do one thing and do it well... write programs to work together." -- Doug McIlroy
-
-> "The innovation that this industry talks about so much is bullshit. Anybody can innovate... 99% of it is 'Get the work done.' The real work is in the details." -- Linus Torvalds
 
 == Installation ==
 
@@ -267,6 +259,12 @@ Please avoid leaving negative reviews in order to get a feature implemented. Joi
 
 == Changelog ==
 
+= 1.3.0 =
+* tested with WP 5.0
+* bundles Disable Gutenberg 1.0.0 (default = true)
+* bundles Disable WooCommerce Status 1.0.4 (default = false)
+* bundles Disable WooCommerce Styles 1.0.1 (default = false)
+
 = 1.2.2 =
 * updated Minify HTML 1.0.1
 * (fixed bug in REMOVE_EXTRA_SPACING that was removing spaces before/after inline HTML tags)
@@ -275,21 +273,17 @@ Please avoid leaving negative reviews in order to get a feature implemented. Joi
 * updated plugin meta
 
 = 1.2.0 =
-* bundles Minify HTML 1.0.0
+* bundles Minify HTML 1.0.0 (default = true)
 * default status for Inline Styles is now = false
 * default status for Disable Admin-AJAX is now = false
 * optimized plugin code
 * fixed error for PHP < 7.0 ...you're welcome, PHP 5 babies... now upgrade! ;) e.g. `Parse error: syntax error, unexpected 'default' (T_DEFAULT), expecting identifier (T_STRING) in ../wp-content/plugins/speed-demon-littlebizzy/modules/remove-query-strings/core/filter.php on line 116`
 
 = 1.1.0 =
-* bundles Disable Admin-AJAX 1.0.0
-* bundles Disable Cart Fragments 1.1.3
-* bundles Disable jQuery Migrate 1.0.0
-* bundles Header Cleanup 1.1.1
-* define('DISABLE_ADMIN_AJAX', true);
-* define('DISABLE_CART_FRAGMENTS', true);
-* define('DISABLE_JQUERY_MIGRATE', true);
-* define('HEADER_CLEANUP', true);
+* bundles Disable Admin-AJAX 1.0.0 (default = true)
+* bundles Disable Cart Fragments 1.1.3 (default = true)
+* bundles Disable jQuery Migrate 1.0.0 (default = true)
+* bundles Header Cleanup 1.1.1 (default = true)
 * added recommended plugins notice
 * added rating request notice
 
@@ -298,28 +292,14 @@ Please avoid leaving negative reviews in order to get a feature implemented. Joi
 * tested with PHP 7.0
 * tested with PHP 7.1
 * tested with PHP 7.2
-* bundles Delete Expired Transients 1.0.3
-* bundles Disable Embeds 1.1.1
-* bundles Disable Emojis 1.1.2
-* bundles Disable Post Via Email 1.0.0
-* bundles Disable XML-RPC 1.0.8
-* bundles Index Autoload 1.1.1
-* bundles Inline Styles 1.1.0
-* bundles Remove Query Strings 1.3.1
-* define('DELETE_EXPIRED_TRANSIENTS', true);
-* define('DELETE_EXPIRED_TRANSIENTS_HOURS', '6');
-* define('DELETE_EXPIRED_TRANSIENTS_MAX_EXECUTION_TIME', '10');
-* define('DELETE_EXPIRED_TRANSIENTS_MAX_BATCH_RECORDS', '50');
-* define('DISABLE_EMBEDS', true);
-* define('DISABLE_EMBEDS_ALLOWED_SOURCES', 'twitter, youtube');
-* define('DISABLE_EMOJIS', true);
-* define('DISABLE_POST_VIA_EMAIL', true);
-* define('DISABLE_XML_RPC', true);
-* define('INDEX_AUTOLOAD', true);
-* define('INDEX_AUTOLOAD_REGENERATE', true);
-* define('INLINE_STYLES', true);
-* define('REMOVE_QUERY_STRINGS', true);
-* define('REMOVE_QUERY_STRINGS_ARGS', 'v,ver,version');
+* bundles Delete Expired Transients 1.0.3 (default = true)
+* bundles Disable Embeds 1.1.1 (default = true)
+* bundles Disable Emojis 1.1.2 (default = true)
+* bundles Disable Post Via Email 1.0.0 (default = true)
+* bundles Disable XML-RPC 1.0.8 (default = true)
+* bundles Index Autoload 1.1.1 (default = true)
+* bundles Inline Styles 1.1.0 (default = true)
+* bundles Remove Query Strings 1.3.1 (default = true)
 * added warning to Multisite installations
 * plugin uses PHP namespaces
 * object-oriented codebase
