@@ -10,7 +10,7 @@ use \LittleBizzy\SpeedDemon\Modules\Disable_WooCommerce_Styles\Styles;
 /**
  * Object Factory class
  *
- * @package Speed Demon / Disable Gutenberg
+ * @package Speed Demon / Disable WooCommerce Styles
  * @subpackage Core
  */
 class Factory extends Helpers\Factory {
