@@ -2,12 +2,12 @@
 
 Contributors: littlebizzy
 Donate link: https://www.patreon.com/littlebizzy
-Tags: speed, pagespeed, performance, loading, time
+Tags: loading slow, page speed, performance, speed optimization, speed up
 Requires at least: 4.4
 Tested up to: 5.0
 Requires PHP: 7.2
 Multisite support: No
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Prefix: SPDDMN
@@ -115,6 +115,10 @@ Any of our WordPress plugins may also be loaded as "Must-Use" plugins by using o
     define('DISABLE_GUTENBERG', true);
     define('DISABLE_JQUERY_MIGRATE', true);
     define('DISABLE_POST_VIA_EMAIL', true);
+    define('DISABLE_WOOCOMMERCE_STATUS', false);
+    define('DISABLE_WOOCOMMERCE_STYLES', false);
+    define('DISABLE_WOOCOMMERCE_STYLES_NAMES', 'select2');
+    define('DISABLE_WOOCOMMERCE_STYLES_PREFIXES', 'wc,woocommerce');
     define('DISABLE_XML_RPC', true);
     define('HEADER_CLEANUP', true);
     define('INDEX_AUTOLOAD', true);
@@ -133,10 +137,6 @@ Any of our WordPress plugins may also be loaded as "Must-Use" plugins by using o
     define('MINIFY_HTML_UTF8_SUPPORT', true);
     define('REMOVE_QUERY_STRINGS', true);
     define('REMOVE_QUERY_STRINGS_ARGS', 'v,ver,version');
-    define('DISABLE_WOOCOMMERCE_STATUS', false);
-    define('DISABLE_WOOCOMMERCE_STYLES', false);
-    define(DISABLE_WOOCOMMERCE_STYLES_NAMES, 'select2');
-    define('DISABLE_WOOCOMMERCE_STYLES_PREFIXES', 'woocommerce,wc');
 
 #### Technical Details ####
 
@@ -259,31 +259,34 @@ Please avoid leaving negative reviews in order to get a feature implemented. Joi
 
 == Changelog ==
 
+= 1.3.1 =
+* updated plugin meta
+
 = 1.3.0 =
 * tested with WP 5.0
-* bundles Disable Gutenberg 1.0.0 (default = true)
-* bundles Disable WooCommerce Status 1.0.4 (default = false)
-* bundles Disable WooCommerce Styles 1.0.1 (default = false)
+* bundled Disable Gutenberg (1.0.0) default = true
+* bundled Disable WooCommerce Status (1.0.4) default = false
+* bundled Disable WooCommerce Styles (1.0.1) default = false
 
 = 1.2.2 =
-* updated Minify HTML 1.0.1
+* updated Minify HTML (1.0.1)
 * (fixed bug in REMOVE_EXTRA_SPACING that was removing spaces before/after inline HTML tags)
 
 = 1.2.1 =
 * updated plugin meta
 
 = 1.2.0 =
-* bundles Minify HTML 1.0.0 (default = true)
-* default status for Inline Styles is now = false
-* default status for Disable Admin-AJAX is now = false
+* bundled Minify HTML (1.0.0) default = true
+* changed Inline Styles default = false
+* changed Disable Admin-AJAX default = false
 * optimized plugin code
-* fixed error for PHP < 7.0 ...you're welcome, PHP 5 babies... now upgrade! ;) e.g. `Parse error: syntax error, unexpected 'default' (T_DEFAULT), expecting identifier (T_STRING) in ../wp-content/plugins/speed-demon-littlebizzy/modules/remove-query-strings/core/filter.php on line 116`
+* fixed PHP 5.x error... you're welcome, now upgrade to PHP 7.2! ;) e.g. `Parse error: syntax error, unexpected 'default' (T_DEFAULT), expecting identifier (T_STRING) in ../wp-content/plugins/speed-demon-littlebizzy/modules/remove-query-strings/core/filter.php on line 116`
 
 = 1.1.0 =
-* bundles Disable Admin-AJAX 1.0.0 (default = true)
-* bundles Disable Cart Fragments 1.1.3 (default = true)
-* bundles Disable jQuery Migrate 1.0.0 (default = true)
-* bundles Header Cleanup 1.1.1 (default = true)
+* bundled Disable Admin-AJAX (1.0.0) default = true
+* bundled Disable Cart Fragments (1.1.3) default = true
+* bundled Disable jQuery Migrate (1.0.0) default = true
+* bundled Header Cleanup (1.1.1) default = true
 * added recommended plugins notice
 * added rating request notice
 
@@ -292,14 +295,14 @@ Please avoid leaving negative reviews in order to get a feature implemented. Joi
 * tested with PHP 7.0
 * tested with PHP 7.1
 * tested with PHP 7.2
-* bundles Delete Expired Transients 1.0.3 (default = true)
-* bundles Disable Embeds 1.1.1 (default = true)
-* bundles Disable Emojis 1.1.2 (default = true)
-* bundles Disable Post Via Email 1.0.0 (default = true)
-* bundles Disable XML-RPC 1.0.8 (default = true)
-* bundles Index Autoload 1.1.1 (default = true)
-* bundles Inline Styles 1.1.0 (default = true)
-* bundles Remove Query Strings 1.3.1 (default = true)
-* added warning to Multisite installations
-* plugin uses PHP namespaces
-* object-oriented codebase
+* implemented PHP namespaces
+* impelmented object-oriented codebase
+* added warning for Multisite installations
+* bundled Delete Expired Transients (1.0.3) default = true
+* bundled Disable Embeds (1.1.1) default = true
+* bundled Disable Emojis (1.1.2) default = true
+* bundled Disable Post Via Email (1.0.0) default = true
+* bundled Disable XML-RPC (1.0.8) default = true
+* bundled Index Autoload (1.1.1) default = true
+* bundled Inline Styles (1.1.0) default = true
+* bundled Remove Query Strings (1.3.1) default = true
