@@ -1,0 +1,16 @@
+{
+    "name": "littlebizzy/speed-demon",
+    "type": "wordpress-plugin",
+    "license": "GPLv3",
+    "homepage": "https://www.littlebizzy.com/plugins/speed-demon",
+    "description": "A powerful bundle of lightweight tweaks that drastically improve the loading speed of WordPress by reducing bloat and improving overall efficiency.",
+    "keywords": ["wordpress","plugin","speed","performance","optimize","optimization","speed up","loading time","improve","reduce","bloat"],
+    "support": {
+        "issues": "https://github.com/littlebizzy/speed-demon/issues",
+        "forum": "https://www.littlebizzy.com/members"
+    }
+    "require": {
+        "php": "^7.2",
+        "composer/installers": "~1.0"
+    }
+}
