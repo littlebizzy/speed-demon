@@ -50,6 +50,7 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
     
 ### Included Modules
 
+* Dashboard Cleanup
 * [Delete Expired Transients](https://github.com/littlebizzy/delete-expired-transients)
 * [Disable Admin-AJAX](https://github.com/littlebizzy/disable-admin-ajax)
 * [Disable Cart Fragments](https://github.com/littlebizzy/disable-cart-fragments)
@@ -58,6 +59,7 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 * [Disable Gutenberg](https://github.com/littlebizzy/disable-gutenberg)
 * [Disable jQuery Migrate](https://github.com/littlebizzy/disable-jquery-migrate)
 * [Disable Post Via Email](https://github.com/littlebizzy/disable-post-via-email)
+* Disable Thumbnail Regeneration
 * [Disable WooCommerce Status](https://github.com/littlebizzy/disable-woocommerce-status)
 * [Disable WooCommerce Styles](https://github.com/littlebizzy/disable-woocommerce-styles)
 * [Disable XML-RPC](https://github.com/littlebizzy/disable-xml-rpc)
