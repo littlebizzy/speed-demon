@@ -1,4 +1,4 @@
-=== Speed Demon (Performance Optimization Plugin) ===
+=== Speed Demon ===
 
 Contributors: littlebizzy
 Donate link: https://www.patreon.com/littlebizzy
@@ -7,7 +7,7 @@ Requires at least: 4.4
 Tested up to: 5.0
 Requires PHP: 7.2
 Multisite support: No
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Prefix: SPDDMN
@@ -17,11 +17,6 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 == Description ==
 
 A powerful bundle of lightweight tweaks that drastically improve the loading speed of WordPress by reducing bloat and improving overall efficiency.
-
-* [**Join our FREE Facebook group for support**](https://www.facebook.com/groups/littlebizzy/)
-* [**Worth a 5-star review? Thank you!**](https://wordpress.org/support/plugin/speed-demon-littlebizzy/reviews/?rate=5#new-post)
-* [Plugin Homepage](https://www.littlebizzy.com/plugins/speed-demon)
-* [Plugin GitHub](https://github.com/littlebizzy/speed-demon)
 
 #### Current Features ####
 
@@ -90,53 +85,6 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 * [Minify HTML](https://wordpress.org/plugins/minify-html-littlebizzy/)
 * [Remove Query Strings](https://wordpress.org/plugins/remove-query-strings-littlebizzy/)
 * (more modules coming soon...)
-
-#### Compatibility ####
-
-This plugin has been designed for use on [SlickStack](https://slickstack.io) web servers with PHP 7.2 and MySQL 5.7 to achieve best performance. All of our plugins are meant for single site WordPress installations only; for both performance and usability reasons, we highly recommend avoiding WordPress Multisite for the vast majority of projects.
-
-Any of our WordPress plugins may also be loaded as "Must-Use" plugins by using our free [Autoloader](https://github.com/littlebizzy/autoloader) script in the `mu-plugins` directory.
-
-#### Defined Constants ####
-
-    /* Plugin Meta */
-    define('DISABLE_NAG_NOTICES', true);
-
-    /* Speed Demon Functions */
-    define('DELETE_EXPIRED_TRANSIENTS', true);
-    define('DELETE_EXPIRED_TRANSIENTS_HOURS', '6');
-    define('DELETE_EXPIRED_TRANSIENTS_MAX_EXECUTION_TIME', '10');
-    define('DELETE_EXPIRED_TRANSIENTS_MAX_BATCH_RECORDS', '50');
-    define('DISABLE_ADMIN_AJAX', false);
-    define('DISABLE_CART_FRAGMENTS', true);
-    define('DISABLE_EMBEDS', true);
-    define('DISABLE_EMBEDS_ALLOWED_SOURCES', 'none');
-    define('DISABLE_EMOJIS', true);
-    define('DISABLE_GUTENBERG', true);
-    define('DISABLE_JQUERY_MIGRATE', true);
-    define('DISABLE_POST_VIA_EMAIL', true);
-    define('DISABLE_WOOCOMMERCE_STATUS', false);
-    define('DISABLE_WOOCOMMERCE_STYLES', false);
-    define('DISABLE_WOOCOMMERCE_STYLES_NAMES', 'select2');
-    define('DISABLE_WOOCOMMERCE_STYLES_PREFIXES', 'wc,woocommerce');
-    define('DISABLE_XML_RPC', true);
-    define('HEADER_CLEANUP', true);
-    define('INDEX_AUTOLOAD', true);
-    define('INDEX_AUTOLOAD_REGENERATE', false);
-    define('INLINE_STYLES', false);
-    define('MINIFY_HTML', true);
-    define('MINIFY_HTML_INLINE_STYLES', true);
-    define('MINIFY_HTML_INLINE_STYLES_COMMENTS', true);
-    define('MINIFY_HTML_REMOVE_COMMENTS', true);
-    define('MINIFY_HTML_REMOVE_CONDITIONALS', true);
-    define('MINIFY_HTML_REMOVE_EXTRA_SPACING', true);
-    define('MINIFY_HTML_REMOVE_HTML5_SELF_CLOSING', false);
-    define('MINIFY_HTML_REMOVE_LINE_BREAKS', true);
-    define('MINIFY_HTML_INLINE_SCRIPTS', false);
-    define('MINIFY_HTML_INLINE_SCRIPTS_COMMENTS', false);
-    define('MINIFY_HTML_UTF8_SUPPORT', true);
-    define('REMOVE_QUERY_STRINGS', true);
-    define('REMOVE_QUERY_STRINGS_ARGS', 'v,ver,version');
 
 #### Technical Details ####
 
@@ -256,53 +204,3 @@ Plugin functionality is checked at WP init hook, so the module constant can be d
 = I have a suggestion, how can I let you know? =
 
 Please avoid leaving negative reviews in order to get a feature implemented. Join our Facebook group instead.
-
-== Changelog ==
-
-= 1.3.1 =
-* updated plugin meta
-
-= 1.3.0 =
-* tested with WP 5.0
-* bundled Disable Gutenberg (1.0.0) default = true
-* bundled Disable WooCommerce Status (1.0.4) default = false
-* bundled Disable WooCommerce Styles (1.0.1) default = false
-
-= 1.2.2 =
-* updated Minify HTML (1.0.1)
-* (fixed bug in REMOVE_EXTRA_SPACING that was removing spaces before/after inline HTML tags)
-
-= 1.2.1 =
-* updated plugin meta
-
-= 1.2.0 =
-* bundled Minify HTML (1.0.0) default = true
-* changed Inline Styles default = false
-* changed Disable Admin-AJAX default = false
-* optimized plugin code
-* fixed PHP 5.x error... you're welcome, now upgrade to PHP 7.2! ;) e.g. `Parse error: syntax error, unexpected 'default' (T_DEFAULT), expecting identifier (T_STRING) in ../wp-content/plugins/speed-demon-littlebizzy/modules/remove-query-strings/core/filter.php on line 116`
-
-= 1.1.0 =
-* bundled Disable Admin-AJAX (1.0.0) default = true
-* bundled Disable Cart Fragments (1.1.3) default = true
-* bundled Disable jQuery Migrate (1.0.0) default = true
-* bundled Header Cleanup (1.1.1) default = true
-* added recommended plugins notice
-* added rating request notice
-
-= 1.0.0 =
-* initial release
-* tested with PHP 7.0
-* tested with PHP 7.1
-* tested with PHP 7.2
-* implemented PHP namespaces
-* impelmented object-oriented codebase
-* added warning for Multisite installations
-* bundled Delete Expired Transients (1.0.3) default = true
-* bundled Disable Embeds (1.1.1) default = true
-* bundled Disable Emojis (1.1.2) default = true
-* bundled Disable Post Via Email (1.0.0) default = true
-* bundled Disable XML-RPC (1.0.8) default = true
-* bundled Index Autoload (1.1.1) default = true
-* bundled Inline Styles (1.1.0) default = true
-* bundled Remove Query Strings (1.3.1) default = true
