@@ -3,14 +3,10 @@
 A powerful bundle of lightweight tweaks that drastically improve the loading speed of WordPress by reducing bloat and improving overall efficiency.
 
 * [Plugin Homepage](https://www.littlebizzy.com/plugins/speed-demon)
-* [Download Latest Version (ZIP)](https://github.com/littlebizzy/speed-demon/archive/1.3.1.zip)
+* [Download Latest Version (ZIP)](https://github.com/littlebizzy/speed-demon/archive/v1.3.2.zip)
 * [**Become A LittleBizzy.com Member Today!**](https://www.littlebizzy.com/members)
 
 ### Defined Constants
-
-    /** Plugin Meta */
-    define('AUTOMATIC_UPDATE_PLUGINS', false); // default = false
-    define('DISABLE_NAG_NOTICES', true); // default = true
 
     /** Speed Demon Functions */
     define('DELETE_EXPIRED_TRANSIENTS', true);
@@ -47,7 +43,7 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
     define('MINIFY_HTML_UTF8_SUPPORT', true);
     define('REMOVE_QUERY_STRINGS', true);
     define('REMOVE_QUERY_STRINGS_ARGS', 'v,ver,version');
-    
+
 ### Included Modules
 
 * Dashboard Cleanup
