@@ -1,5 +1,10 @@
 ## Changelog
 
+### 1.4.0
+* bundled Dashboard Cleanup 1.1.2
+* removed Index Autoload (included in WP Core after 5.3+)
+* changed Remove Query Strings to be disabled by default (all constants)
+
 ### 1.3.2
 * updated plugin meta
 
