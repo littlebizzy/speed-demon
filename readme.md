@@ -3,7 +3,7 @@
 A powerful bundle of lightweight tweaks that drastically improve the loading speed of WordPress by reducing bloat and improving overall efficiency.
 
 * [Plugin Homepage](https://www.littlebizzy.com/plugins/speed-demon)
-* [Download Latest Version (ZIP)](https://github.com/littlebizzy/speed-demon/archive/v1.3.2.zip)
+* [Download Latest Version (ZIP)](https://github.com/littlebizzy/speed-demon/archive/v1.4.0.zip)
 * [**Become A LittleBizzy.com Member Today!**](https://www.littlebizzy.com/members)
 
 ### Defined Constants
