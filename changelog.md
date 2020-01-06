@@ -45,6 +45,5 @@
 * bundled Disable Emojis (1.1.2) default = true
 * bundled Disable Post Via Email (1.0.0) default = true
 * bundled Disable XML-RPC (1.0.8) default = true
-* bundled Index Autoload (1.1.1) default = true
 * bundled Inline Styles (1.1.0) default = true
 * bundled Remove Query Strings (1.3.1) default = true

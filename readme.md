@@ -27,8 +27,6 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
     define('DISABLE_WOOCOMMERCE_STYLES_PREFIXES', 'woocommerce,wc');
     define('DISABLE_XML_RPC', true);
     define('HEADER_CLEANUP', true);
-    define('INDEX_AUTOLOAD', true);
-    define('INDEX_AUTOLOAD_REGENERATE', false);
     define('INLINE_STYLES', false);
     define('MINIFY_HTML', true);
     define('MINIFY_HTML_INLINE_STYLES', true);
@@ -43,10 +41,26 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
     define('MINIFY_HTML_UTF8_SUPPORT', true);
     define('REMOVE_QUERY_STRINGS', true);
     define('REMOVE_QUERY_STRINGS_ARGS', 'v,ver,version');
-    
+    define('DASHBOARD_CLEANUP_THANKS_FOOTER', true);
+    define('DASHBOARD_CLEANUP_WP_ORG_SHORTCUT_LINKS', true);
+    define('DASHBOARD_CLEANUP_LINK_MANAGER_MENU', true);
+    define('DASHBOARD_CLEANUP_ADD_PLUGIN_TABS', true);
+    define('DASHBOARD_CLEANUP_ADD_THEME_TABS', true);
+    define('DASHBOARD_CLEANUP_DISABLE_SEARCH', true);
+    define('DASHBOARD_CLEANUP_IMPORT_EXPORT_MENU', true);
+    define('DASHBOARD_CLEANUP_CSS_ADMIN_NOTICE', true);
+    define('DASHBOARD_CLEANUP_WELCOME_TO_WORDPRESS', true);
+    define('DASHBOARD_CLEANUP_QUICK_DRAFT', true);
+    define('DASHBOARD_CLEANUP_EVENTS_AND_NEWS', true);
+    define('DASHBOARD_CLEANUP_WOOCOMMERCE_CONNECT_STORE', true);
+    define('DASHBOARD_CLEANUP_WOOCOMMERCE_PRODUCTS_BLOCK', true);
+    define('DASHBOARD_CLEANUP_WOOCOMMERCE_FOOTER_TEXT', true);
+    define('DASHBOARD_CLEANUP_WOOCOMMERCE_MARKETPLACE_SUGGESTIONS', true);
+    define('DASHBOARD_CLEANUP_WOOCOMMERCE_TRACKER', true);
+
 ### Included Modules
 
-* Dashboard Cleanup
+* [Dashboard Cleanup](https://github.com/littlebizzy/dashboard-cleanup/)
 * [Delete Expired Transients](https://github.com/littlebizzy/delete-expired-transients)
 * [Disable Admin-AJAX](https://github.com/littlebizzy/disable-admin-ajax)
 * [Disable Cart Fragments](https://github.com/littlebizzy/disable-cart-fragments)
@@ -60,7 +74,6 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 * [Disable WooCommerce Styles](https://github.com/littlebizzy/disable-woocommerce-styles)
 * [Disable XML-RPC](https://github.com/littlebizzy/disable-xml-rpc)
 * [Header Cleanup](https://github.com/littlebizzy/header-cleanup)
-* [Index Autoload](https://github.com/littlebizzy/index-autoload)
 * [Inline Styles](https://github.com/littlebizzy/inline-styles)
 * [Minify HTML](https://github.com/littlebizzy/minify-html)
 * [Remove Query Strings](https://github.com/littlebizzy/remove-query-strings)

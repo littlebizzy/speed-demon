@@ -34,7 +34,6 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
     * [Delete Expired Transients](https://wordpress.org/plugins/delete-expired-transients-littlebizzy/)
     * *Delete Old Revisions (1.4+)*
     * *Delete Orphan Data (1.4+)*
-    * [Index Autoload](https://wordpress.org/plugins/index-autoload-littlebizzy/)
 * [Disable Admin-AJAX](https://wordpress.org/plugins/disable-admin-ajax-littlebizzy/)
 * [Disable Cart Fragments](https://wordpress.org/plugins/disable-cart-fragments-littlebizzy/)
 * [Disable Embeds](https://wordpress.org/plugins/disable-embeds-littlebizzy/)
@@ -175,9 +174,6 @@ Checks constants/classes at the beginning and after the init hook. Tested the co
 
 - Disable Emojis
 Checks constants/classes at first and also after the init hook.
-
-- Index Autoload
-Checks constants/classes after the init hook. Tested the index removal and internal option deleted (used to save the timestamp) on plugin uninstall.
 
 - Delete Expired Transients
 Checking on start and under cron event execution.

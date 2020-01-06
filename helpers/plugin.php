@@ -64,6 +64,15 @@ class Plugin {
 		return $this->$name;
 	}
 
-
+	/**
+	 * Access to the context object
+	 */
+	public function context() {
+		static $context;
+		if (!isset($context)) {
+			$context = new Context;
+		}
+		return $context;
+	}
 
 }

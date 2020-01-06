@@ -14,14 +14,13 @@ use \LittleBizzy\SpeedDemon\Helpers;
  */
 final class Modules extends Helpers\Singleton {
 
-
-
 	/**
 	 * Modules keys and declarations
 	 */
 	private $keys = [
 
 		'remove-query-strings' => [
+			'default'	=> false,
 			'constants' => 'RMQRST_FILE'
 		],
 
@@ -37,11 +36,6 @@ final class Modules extends Helpers\Singleton {
 		'disable-emojis' => [
 			'constants' => '\LittleBizzy\DisableEmojis\FILE',
 			'classes' 	=> ['\LB_Disable_Emojis', '\LittleBizzy\DisableEmojis\Core\Core'],
-		],
-
-		'index-autoload' => [
-			'constants' => 'IDXALD_FILE',
-			'classes'	=> '\IDXALD_Alter',
 		],
 
 		'delete-expired-transients' => [
@@ -102,9 +96,12 @@ final class Modules extends Helpers\Singleton {
 			'constants' => 'DWCSTY_FILE',
 			'classes'	=> '\DWCSTY_Core_Filter',
 		],
+
+		'dashboard-cleanup' => [
+			'constants' => '\LittleBizzy\DashboardCleanup\FILE',
+			'classes'	=> '\LittleBizzy\DashboardCleanup\Core\Core',
+		],
 	];
-
-
 
 	/**
 	 * Run all modules

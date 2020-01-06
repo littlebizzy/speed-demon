@@ -14,16 +14,12 @@ use \LittleBizzy\SpeedDemon\Helpers;
  */
 class Module extends Helpers\Module {
 
-
-
 	/**
 	 * Module constants
 	 */
 	const FILE = __FILE__;
 	const PREFIX = 'rmqrst';
 	const MODULE_NAMESPACE = __NAMESPACE__;
-
-
 
 	/**
 	 * Add filters on module constructor
@@ -33,26 +29,28 @@ class Module extends Helpers\Module {
 		add_filter('script_loader_src', [$this, 'loader']);
 	}
 
-
-
 	/**
 	 * Start the loader filter
 	 */
 	public function loader($src) {
 
 		// Last minute check
-		if (!$this->enabled())
+		if ( !$this->enabled() ) {
 			return $src;
+		}
 
-		// Local cache
-		static $filter;
-		if (!isset($filter))
-			$filter = new Core\Filter(self::PREFIX);
+		if ( defined('REMOVE_QUERY_STRINGS') && REMOVE_QUERY_STRINGS ) {
+			// Local cache
+			static $filter;
 
-		// Process filter
-		return $filter->run($src);
+			if ( !isset($filter) ) {
+				$filter = new Core\Filter(self::PREFIX);
+			}
+
+			// Process filter
+			return $filter->run($src);
+		}
+
+		return $src;
 	}
-
-
-
 }
