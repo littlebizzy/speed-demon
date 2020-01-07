@@ -36,6 +36,7 @@
 * bundled Disable Cart Fragments (1.1.3) default = true
 * bundled Disable jQuery Migrate (1.0.0) default = true
 * bundled Header Cleanup (1.1.1) default = true
+* bundled Index Autoload (1.1.1) default = true
 * added recommended plugins notice
 * added rating request notice
 
