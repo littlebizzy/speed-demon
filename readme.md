@@ -51,10 +51,10 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
     define('MINIFY_HTML_REMOVE_COMMENTS', true); // default = true
     define('MINIFY_HTML_REMOVE_CONDITIONALS', true); // default = true
     define('MINIFY_HTML_REMOVE_EXTRA_SPACING', true); // default = true
-    define('MINIFY_HTML_REMOVE_HTML5_SELF_CLOSING', false); // default = true
+    define('MINIFY_HTML_REMOVE_HTML5_SELF_CLOSING', false); // default = false
     define('MINIFY_HTML_REMOVE_LINE_BREAKS', true); // default = true
-    define('MINIFY_HTML_INLINE_SCRIPTS', false); // default = true
-    define('MINIFY_HTML_INLINE_SCRIPTS_COMMENTS', false); // default = true
+    define('MINIFY_HTML_INLINE_SCRIPTS', false); // default = false
+    define('MINIFY_HTML_INLINE_SCRIPTS_COMMENTS', false); // default = false
     define('MINIFY_HTML_UTF8_SUPPORT', true); // default = true
     define('REMOVE_QUERY_STRINGS', false); // default = false
     define('REMOVE_QUERY_STRINGS_ARGS', 'v,ver,version'); // default = v,ver,version
