@@ -44,7 +44,7 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
     define('DISABLE_WOOCOMMERCE_STYLES_PREFIXES', 'woocommerce,wc'); // default = woocommerce,wc
     define('DISABLE_XML_RPC', true); // default = true
     define('HEADER_CLEANUP', true); // default = true
-    define('INLINE_STYLES', false); // default = true
+    define('INLINE_STYLES', false); // default = false
     define('MINIFY_HTML', true); // default = true
     define('MINIFY_HTML_INLINE_STYLES', true); // default = true
     define('MINIFY_HTML_INLINE_STYLES_COMMENTS', true); // default = true
