@@ -1,17 +1,5 @@
 === Speed Demon ===
 
-Contributors: littlebizzy
-Donate link: https://www.patreon.com/littlebizzy
-Tags: loading slow, page speed, performance, speed optimization, speed up
-Requires at least: 4.4
-Tested up to: 5.0
-Requires PHP: 7.2
-Multisite support: No
-Stable tag: 1.3.2
-License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Prefix: SPDDMN
-
 A powerful bundle of lightweight tweaks that drastically improve the loading speed of WordPress by reducing bloat and improving overall efficiency.
 
 == Description ==
