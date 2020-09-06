@@ -65,6 +65,7 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 * [Delete Expired Transients](https://www.littlebizzy.com/plugins/delete-expired-transients)
 * [Disable Admin-AJAX](https://www.littlebizzy.com/plugins/disable-admin-ajax)
 * [Disable Cart Fragments](https://www.littlebizzy.com/plugins/disable-cart-fragments)
+* [Disable Dashicons](https://www.littlebizzy.com/plugins/disable-dashicons)
 * [Disable Embeds](https://www.littlebizzy.com/plugins/disable-embeds)
 * [Disable Emojis](https://www.littlebizzy.com/plugins/disable-emojis)
 * [Disable Gutenberg](https://www.littlebizzy.com/plugins/disable-gutenberg)
