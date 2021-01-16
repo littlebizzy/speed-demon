@@ -68,6 +68,7 @@ A powerful bundle of lightweight tweaks that drastically improve the loading spe
 * [Disable Dashicons](https://www.littlebizzy.com/plugins/disable-dashicons)
 * [Disable Embeds](https://www.littlebizzy.com/plugins/disable-embeds)
 * [Disable Emojis](https://www.littlebizzy.com/plugins/disable-emojis)
+* Disable Feeds
 * [Disable Gutenberg](https://www.littlebizzy.com/plugins/disable-gutenberg)
 * [Disable jQuery Migrate](https://www.littlebizzy.com/plugins/disable-jquery-migrate)
 * [Disable Post Via Email](https://www.littlebizzy.com/plugins/disable-post-via-email)
