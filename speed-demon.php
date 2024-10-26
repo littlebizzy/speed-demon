@@ -4,6 +4,7 @@ Plugin Name: Speed Demon
 Plugin URI: https://www.littlebizzy.com/plugins/speed-demon
 Description: Performance hacks for WordPress
 Version: 2.0.0
+Requires PHP: 7.0
 Author: LittleBizzy
 Author URI: https://www.littlebizzy.com
 License: GPLv3
@@ -12,12 +13,12 @@ GitHub Plugin URI: littlebizzy/speed-demon
 Primary Branch: master
 */
 
-// Prevent direct access
+// prevent direct access
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-// Disable WordPress.org updates for this plugin
+// disable wordpress.org updates for this plugin
 add_filter( 'gu_override_dot_org', function( $overrides ) {
     $overrides[] = 'speed-demon/speed-demon.php';
     return $overrides;
